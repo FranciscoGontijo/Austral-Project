@@ -1,5 +1,5 @@
-/* HEADER SECTION */
-.navbar_container {
+/* SMALL SCREEN HEADER SECTION */
+.small_screen_header {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,33 +14,33 @@
     z-index: 3;
 }
 
-.menu_icon_container {
+.small_screen_header .menu_icon_container {
     width: 20%;
     display: flex;
 }
 
-.menu_icon {
+.small_screen_header .menu_icon {
     font-size: 25px;
 }
 
-.header_logo {
+.small_screen_header .header_logo {
     height: 38px;
     width: auto;
     justify-self: center;
 }
 
-.header_bag_container {
+.small_screen_header .header_bag_container {
     width: 20%;
     display: flex;
     justify-content: flex-end;
 }
 
-.header_bag_container .user_icon {
+.small_screen_header .header_bag_container .user_icon {
     margin-left: 10%;
     font-size: 25px;
 }
 
-.hidden_navbar_container {
+.small_screen_header .hidden_navbar_container {
     width: 85%;
     position: fixed;
     top: 0;
@@ -48,6 +48,59 @@
     background-color: white;
     height: 100vh;
     z-index: 5;
+}
+/* BIG SCREEN HEADER SECTION */
+.big_screen_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    display: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.398);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    z-index: 3;
+}
+
+@media (min-width: 1020px) {
+    .small_screen_header {
+        display: none;
+    }
+
+    .big_screen_header {
+        display: flex;
+    }
+}
+
+.big_screen_header .header_logo {
+    height: 38px;
+    width: auto;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.big_screen_header .header_navlinks_container {
+    list-style: none;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: #636366;
+    font-family: Lato, sans-serif;
+}
+
+.big_screen_header .header_icons_container {
+    font-size: 25px;
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+}
+
+.big_screen_header .header_icons_container .user_icon {
+    cursor: pointer;
 }
 
 /* SIDE NAVBAR SECTION */

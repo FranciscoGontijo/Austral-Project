@@ -1,3 +1,4 @@
+//import main
 import { useState } from 'react';
 
 //import Next components
@@ -9,9 +10,9 @@ import { FiMenu, FiPhone, FiX } from 'react-icons/fi';
 import { BiUserCircle } from 'react-icons/bi';
 import { BsBag } from 'react-icons/bs';
 
-//Import images
-import headerLogoSrc from '../src/assets/images/Austral Navbar Logo.png';
 
+//Import images from assets
+import headerLogoSrc from '../src/assets/images/Austral Navbar Logo.png';
 
 //import CSS
 import styles from "../src/styles/Navbar.module.css";
@@ -21,24 +22,41 @@ const NavBar = () => {
 
     return (
         <>
-            <header className={styles.navbar_container}>
+            <header className={styles.small_screen_header}>
                 <div className={styles.menu_icon_container}>
                     <FiMenu className={styles.menu_icon} onClick={() => setDisplay('shown')} />
                 </div>
-                <Image
-                    src={headerLogoSrc}
-                    alt="Example Image"
-                    className={styles.header_logo}
-                />
+                <Link href="/">
+                    <Image
+                        src={headerLogoSrc}
+                        alt="Example Image"
+                        className={styles.header_logo}
+                    />
+                </Link>
                 <div className={styles.header_bag_container}>
                     <BiUserCircle className={styles.user_icon} />
                     <BsBag className={styles.user_icon} />
                 </div>
-                <ul className={styles.hidden_links_container}>
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/about">About</Link></li>
-                    <li><Link href="/profile">Profile</Link></li>
+            </header>
+            <header className={styles.big_screen_header}>
+                <Link href="/">
+                    <Image
+                        src={headerLogoSrc}
+                        alt="Example Image"
+                        className={styles.header_logo}
+                    />
+                </Link>
+                <ul className={styles.header_navlinks_container}>
+                    <li><Link href="/store">STORE</Link></li>
+                    <li><Link href="/newproductspage">NEW</Link></li>
+                    <li><Link href="/salespage">SALE</Link></li>
+                    <li><Link href="/about">ABOUT</Link></li>
                 </ul>
+                <div className={styles.header_icons_container}>
+                    <FiPhone className={styles.user_icon} />
+                    <BiUserCircle className={styles.user_icon} />
+                    <BsBag className={styles.user_icon} />
+                </div>
             </header>
             {display === 'shown' && <div className={styles.mask_background}>
                 <FiX onClick={() => setDisplay('hidden')} className={styles.x_mark} />
