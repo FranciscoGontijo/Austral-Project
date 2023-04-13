@@ -1,10 +1,119 @@
-.navbarContainer {
-    position: absolute;
+/* HEADER SECTION */
+.navbar_container {
+    position: fixed;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 58px;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.398);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+    z-index: 3;
+}
+
+.menu_icon_container {
+    width: 20%;
+    display: flex;
+}
+
+.menu_icon {
+    font-size: 25px;
+}
+
+.header_logo {
+    height: 38px;
+    width: auto;
+    justify-self: center;
+}
+
+.header_bag_container {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header_bag_container .user_icon {
+    margin-left: 10%;
+    font-size: 25px;
+}
+
+.hidden_navbar_container {
+    width: 85%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    height: 100vh;
+    z-index: 5;
+}
+
+/* SIDE NAVBAR SECTION */
+.mask_background {
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.676);
+    position: relative;
+}
+
+.mask_background .x_mark {
+    position: absolute;
+    top: 5px;
+    right:5px;
+    font-size: 40px;
+    color: #dbdbdb;
+    z-index: 5;
+}   
+
+.hidden_navlinks {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 40px;
+}
+
+.hidden_navlinks li {
+    display: flex;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.398);
+    height: 45px;
+    align-items: center;
+    padding: 0 10%;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #1C1C1E;
+}
+
+.hidden_links_container {
+    display: none;
+}
+
+.navbar_contact_container {
+    font-family: Lato, sans-serif;
+    color: #1C1C1E;
+    padding: 0 10%;
+    list-style: none;
+}
+
+.navbar_contact_container li {
+    height: 40px;
+
+}
+
+.navbar_contact_container .phone_icon {
+    color: #636366;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.navbar_contact_container .contact_link {
+    color: #636366;
+    font-size: 14px;
 }
 
