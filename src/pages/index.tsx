@@ -12,6 +12,8 @@ import styles from '@/styles/Home.module.css';
 import MainBanner from '../../components/MainBanner';
 import HighlightsMobileHomepage from '../../components/HighlightsMobileHomepage';
 import HighlightsLaptopHomepage from '../../components/HighlightsLaptopHomepage';
+import NewProductsLaptop from '../../components/NewProductsLaptopHomepage';
+import NewProductMobile from '../../components/NewProductsMobileHomepage';
 
 //import utils
 import useWindowSize from '../../util/useWindowSize';
@@ -40,6 +42,8 @@ const Home: NextPage = () => {
       <MainBanner />
       {display === 'mobile' && <HighlightsMobileHomepage />}
       {display === 'laptop' && <HighlightsLaptopHomepage />}
+      {display === 'mobile' && <NewProductMobile />}
+      {display === 'laptop' && <NewProductsLaptop />}
     </main>
   )
 };
