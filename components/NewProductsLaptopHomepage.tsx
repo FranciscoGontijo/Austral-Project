@@ -60,9 +60,9 @@ const NewProductsLaptop = () => {
             <div className={styles.all_products_container}>
                 <IoIosArrowBack onClick={nextContainer} className={styles.back_arrow}/>
                 <IoIosArrowForward onClick={nextContainer} className={styles.foward_arrow}/>
-                {productsArray.slice(currentIndex, currentIndex + 4).map((product) => {
+                {productsArray.slice(currentIndex, currentIndex + 4).map((product, index) => {
                     return (
-                        <div className={styles.product_container}>
+                        <div key={index} className={styles.product_container}>
                             <Link className={styles.link} href={product.pageHref}>
                                 <div className={styles.image_container}>
                                 <Image

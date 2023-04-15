@@ -50,9 +50,9 @@ const HighlightsLaptopHomepage = () => {
             <div className={styles.all_categories_container}>
                 <IoIosArrowBack onClick={nextContainer} className={styles.back_arrow} />
                 <IoIosArrowForward onClick={nextContainer} className={styles.foward_arrow} />
-                {productsArray.slice(currentIndex, currentIndex + 2).map((product) => {
+                {productsArray.slice(currentIndex, currentIndex + 2).map((product, index) => {
                     return (
-                        <div className={styles.categorie_container}>
+                        <div key={index} className={styles.categorie_container}>
                             <div className={styles.image_container}>
                                 <Link className={styles.link} href={product.pageHref}>
                                     <Image
