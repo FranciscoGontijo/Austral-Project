@@ -44,11 +44,8 @@ const NewProductsLaptop = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     const nextContainer = (): void => {
-        if (currentIndex === productsArray.length - 1) {
-            setCurrentIndex((prevIndex) => prevIndex = 0);
-            return
-        }
-        setCurrentIndex((prevIndex) => prevIndex + 1);
+            setCurrentIndex((prevIndex) => prevIndex === 0 ? 4 : 0);
+
     }
 
     return (
