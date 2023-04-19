@@ -1,4 +1,4 @@
-// Mock all datas here
+//Mock all datas here
 
 //PRODUCTS DATA
 //import products images
@@ -14,6 +14,7 @@ import shirtHawkeBlackSrc from '../src/assets/images/products/Shirt Hawke black.
 import sweatshirtStatueNavySrc from '../src/assets/images/products/Sweatshirt Statue navy.webp';
 import swimshortsMiramarGreenSrc from '../src/assets/images/products/Swimshorts Miramar green.webp';
 
+//Product object type
 export type ProductType = {
     name: string;
     imageSrc: any;
@@ -21,14 +22,18 @@ export type ProductType = {
     categorie: string;
     color: string;
     pageHref: string;
+    key: string;
+    new: boolean;
+    sales: boolean;
 }
 
-export type MockDataType = {
+//Full mocked data structure type
+export type DataType = {
     products: ProductType[];
 }
 
 
-export const data: MockDataType = {
+export const data: DataType = {
     products: [
         {
             name: 'T-Shirt Jungle Stone',
@@ -36,7 +41,10 @@ export const data: MockDataType = {
             price: 75,
             categorie:'T-shirt',
             color: 'green',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: true
         },
         {
             name: 'T-Shirt Time Stone',
@@ -44,7 +52,10 @@ export const data: MockDataType = {
             price: 75,
             categorie:'T-shirt',
             color: 'blue',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: false
         },
         {
             name: 'T-Shirt Journey Stone',
@@ -52,7 +63,10 @@ export const data: MockDataType = {
             price: 80,
             categorie:'T-shirt',
             color: 'black',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: false
         },
         {
             name: 'T-Shirt River',
@@ -60,7 +74,10 @@ export const data: MockDataType = {
             price: 75,
             categorie:'T-shirt',
             color: 'white',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: false,
+            sales: true
         },
         {
             name: 'Hoodie Eco Linen',
@@ -68,7 +85,10 @@ export const data: MockDataType = {
             price: 120,
             categorie: 'Hoodie',
             color: 'gray',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: false,
+            sales: true
         },
         {
             name: 'Hoodie Eco Recycle',
@@ -76,7 +96,10 @@ export const data: MockDataType = {
             price: 110,
             categorie: 'Hoodie',
             color: 'green',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: false,
+            sales: true
         },
         {
             name: 'Sweatshirt Statue',
@@ -84,7 +107,10 @@ export const data: MockDataType = {
             price: 100,
             categorie: 'Sweatshirt',
             color: 'black',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: true
         },
         {
             name: 'Hoodie Journey',
@@ -92,7 +118,10 @@ export const data: MockDataType = {
             price: 120,
             categorie: 'Hoodie',
             color: 'off white',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: false
         },
         {
             name: 'Shirt Hawke',
@@ -100,7 +129,10 @@ export const data: MockDataType = {
             price: 140,
             categorie: 'Shirt',
             color: 'black',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: false
         },
         {
             name: 'Swimshorts Miramar',
@@ -108,7 +140,10 @@ export const data: MockDataType = {
             price: 60,
             categorie: 'Swimshorts',
             color: 'green',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: false
         },
         {
             name: 'Hoodie Nuestro',
@@ -116,7 +151,15 @@ export const data: MockDataType = {
             price: 110,
             categorie: 'Hoodie',
             color: 'navy',
-            pageHref: '/store/productid'
+            pageHref: '/store/productid',
+            key: '',
+            new: true,
+            sales: true
         }
     ]
 };
+
+
+
+
+
