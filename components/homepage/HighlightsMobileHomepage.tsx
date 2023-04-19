@@ -5,17 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 //import CSS
-import styles from "../src/styles/HighlightsMobile.module.css";
+import styles from "../../src/styles/HighlightsMobile.module.css";
 
 
 //import icons from react-icons
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 //import images
-import highlightsFirstImageSrc from '../src/assets/images/homepage/Highlights Main.webp';
-import highlightsSecondImageSrc from '../src/assets/images/homepage/Highlights T-shirt.webp';
-import highlightsThirdImageSrc from '../src/assets/images/homepage/Highlights Jackets.webp';
-import highlightsFourthImageSrc from '../src/assets/images/homepage/Highlights Sales.webp';
+import highlightsFirstImageSrc from '../../src/assets/images/homepage/Highlights Main.webp';
+import highlightsSecondImageSrc from '../../src/assets/images/homepage/Highlights T-shirt.webp';
+import highlightsThirdImageSrc from '../../src/assets/images/homepage/Highlights Jackets.webp';
+import highlightsFourthImageSrc from '../../src/assets/images/homepage/Highlights Sales.webp';
 
 
 
