@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 //import CSS
-import styles from '../../src/styles/ProductsSection.module.css';
+import styles from '../../src/styles/store/ProductsSection.module.css';
 
 //import products list
 import { data } from '../../util/data';

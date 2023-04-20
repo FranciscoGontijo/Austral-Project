@@ -12,22 +12,32 @@ import Image from 'next/image';
 import { data, ProductType } from '../../util/data';
 
 //import CSS
-import styles from '../../src/styles/ProductsSection.module.css';
+import styles from '../../src/styles/store/ProductsSection.module.css';
 
+//Types
+type SetterFunctionType = (value: string) => void;
+
+
+//MAIN COMPONENT
 const ProductsSection = () => {
-    const [categorie, setCategorie] = useState<string>("");
-    const [filteredProductsArray, setFilteredProductsArray] = useState<ProductType[]>(data.products);
+    const [categorie, setCategorie] = useState<string>("All");
+    const [filteredProductsList, setFilteredProductsList] = useState<ProductType[]>(data.products);
     const [sortProducts, setSortProducts] = useState<string>('');
+
+    //categorie setter to pass to children componenents
+    const categorieSetter: SetterFunctionType = (value: string): void => {
+        setCategorie(value);
+    };
 
     //Filter button
     const handleCategoriesFilter = (): void => {
         if (categorie === 'All' || categorie === '') {
-            setFilteredProductsArray(prevProductsArray => prevProductsArray = data.products);
+            setFilteredProductsList(prevProductsArray => prevProductsArray = data.products);
             return
         }
         if (categorie !== 'All') {
-            let array: ProductType[] = data.products.filter(product => product.categorie === categorie);
-            setFilteredProductsArray(prevProductsArray => prevProductsArray = array);
+            let filteredArray: ProductType[] = data.products.filter(product => product.categorie === categorie);
+            setFilteredProductsList(prevProductsArray => prevProductsArray = filteredArray);
         }
     };
 
@@ -43,10 +53,10 @@ const ProductsSection = () => {
             return
         }
         if (sortProducts === 'Price min to max') {
-            setFilteredProductsArray(array => [...array].sort((productA, productB) => (productA.price > productB.price ? 1 : -1)));
+            setFilteredProductsList(prevProductList => [...prevProductList].sort((productA, productB) => (productA.price > productB.price ? 1 : -1)));
         }
         if (sortProducts === 'Price max to min') {
-            setFilteredProductsArray(array => [...array].sort((productA, productB) => (productA.price < productB.price ? 1 : -1)));
+            setFilteredProductsList(prevProductList => [...prevProductList].sort((productA, productB) => (productA.price < productB.price ? 1 : -1)));
         }
     };
 
@@ -54,14 +64,14 @@ const ProductsSection = () => {
         handleSortProducts();
     }, [sortProducts]);
 
-
+    
     return (
         <section className={styles.products_section_container}>
             <div className={styles.buttons_container}>
                 <select
                     className={styles.filter_button}
                     value={categorie}
-                    onChange={(e) => setCategorie(e.target.value)}>
+                    onChange={(e) => categorieSetter(e.target.value)}>
                     <option value="" disabled>Filter per categorie</option>
                     <option value='All'>All</option>
                     <option value='Hoodie'>Hoodie</option>
@@ -70,7 +80,7 @@ const ProductsSection = () => {
                     <option value='Shirt'>Shirt</option>
                     <option value='Swimshorts'>Swimshorts</option>
                 </select>
-                <p className={styles.product_quantity_text}>{`${filteredProductsArray.length} Products`}</p>
+                <p className={styles.product_quantity_text}>{`${filteredProductsList.length} Products`}</p>
                 <select
                     className={styles.sort_button}
                     value={sortProducts}
@@ -81,11 +91,11 @@ const ProductsSection = () => {
                 </select>
             </div>
             <div className={styles.big_screen_products_container}>
-                <FilterComponent />
+               {<FilterComponent categorieSetter={categorieSetter} />}
                 <div className={styles.all_products_container}>
-                    {filteredProductsArray.map((product) => {
+                    {filteredProductsList.map((product) => {
                         return (
-                            <div key={product.key} className={styles.product_container}>
+                            <div key={product.name} className={styles.product_container}>
                                 <Link className={styles.link} href={product.pageHref}>
                                     <div className={styles.image_container}>
                                         <Image
