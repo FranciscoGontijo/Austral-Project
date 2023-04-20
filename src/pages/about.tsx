@@ -1,9 +1,12 @@
-
+//import components
+import AboutUsBanner from "../../components/aboutpage/MainBanner";
+import AboutUsTextBanner from "../../components/aboutpage/MainTextBanner";
 
 const AboutPage = () => {
     return (
         <div>
-            <h1>Hey, this is about page</h1>
+            <AboutUsBanner />
+            <AboutUsTextBanner />
         </div>
     )
 };
