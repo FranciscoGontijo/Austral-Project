@@ -21,7 +21,7 @@ const FilterComponent = ({ categorieSetter }: FilterComponentProps) => {
     const [quantityPerCategorieArray, setQuantityPerCategorieArray] = useState<CategorieArrayType>([]);
 
     useEffect(() => {
-        setQuantityPerCategorieArray(findQuantityPerCategorie(data));
+        setQuantityPerCategorieArray(findQuantityPerCategorie(data.products));
     }, [])
 
     return (

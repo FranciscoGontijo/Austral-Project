@@ -1,18 +1,20 @@
 
 //import products list
-import { DataType, ProductType } from './data';
+import { ProductType } from './data';
 
 export type CategorieObjectType = {name: string, quantity: number}
 
 export type CategorieArrayType = CategorieObjectType[];
 
-const findCategorieQuantity = (arrayOfObjectjs: DataType): CategorieArrayType => {
+const findCategorieQuantity = (productsList: ProductType[]): CategorieArrayType => {
+    //categories counters
     let hoodieCount = 0;
     let tshirtCount = 0;
     let shirtCount = 0;
     let swimshortCount = 0;
     let sweatshirtCount = 0;
-    arrayOfObjectjs.products.forEach((product: ProductType): void => {
+
+    productsList.forEach((product: ProductType): void => {
         switch (product.categorie) {
             case 'Hoodie':
                 hoodieCount += 1;
