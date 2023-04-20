@@ -1,6 +1,4 @@
 
-
-
 //import next image
 import Image from "next/image";
 
@@ -8,7 +6,7 @@ import Image from "next/image";
 import styles from '../../src/styles/newproducts/NewProducts.module.css';
 
 //import banner image
-import bannerImageSrc from '../../src/assets/images/Store Main Banner.png';
+import bannerImageSrc from '../../src/assets/images/New Products Main Banner.png';
 
 const NewProductsBanner = () => {
     return (
@@ -20,7 +18,7 @@ const NewProductsBanner = () => {
             />
             <div className={styles.banner_text_container}>
                 <h3>EXPLORE</h3> 
-                <h1>Online Store</h1>
+                <h1>New Products</h1>
             </div>
         </section>
     )

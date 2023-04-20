@@ -17,7 +17,7 @@
 
 .banner_container .banner_text_container {
     position: absolute;
-    top: 30%;
+    bottom: 20%;
     left: 10%;
     color: white;
     font-family: Lato, sans-serif;

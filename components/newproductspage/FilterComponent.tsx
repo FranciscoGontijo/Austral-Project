@@ -5,7 +5,10 @@ import { useState, useEffect } from 'react';
 import styles from '../../src/styles/newproducts/NewProducts.module.css';
 
 //import products list
-import { data } from '../../util/data';
+import { data, ProductType } from '../../util/data';
+
+const newProductsArray: ProductType[] = data.products.filter((product) => product.new);
+
 
 //import util functions
 import findQuantityPerCategorie, { CategorieArrayType, CategorieObjectType } from '../../util/findQuantityPerCategorie';
@@ -21,7 +24,7 @@ const NewProductsFilterComponent = ({ categorieSetter }: FilterComponentProps) =
     const [quantityPerCategorieArray, setQuantityPerCategorieArray] = useState<CategorieArrayType>([]);
 
     useEffect(() => {
-        setQuantityPerCategorieArray(findQuantityPerCategorie(data));
+        setQuantityPerCategorieArray(findQuantityPerCategorie(newProductsArray));
     }, [])
 
     return (

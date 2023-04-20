@@ -11,6 +11,8 @@ import Image from 'next/image';
 //import products
 import { data, ProductType } from '../../util/data';
 
+const newProductsArray: ProductType[] = data.products.filter((product) => product.new);
+
 //import CSS
 import styles from '../../src/styles/newproducts/NewProducts.module.css';
 
@@ -21,7 +23,7 @@ type SetterFunctionType = (value: string) => void;
 //MAIN COMPONENT
 const NewProductsSection = () => {
     const [categorie, setCategorie] = useState<string>("All");
-    const [filteredProductsList, setFilteredProductsList] = useState<ProductType[]>(data.products);
+    const [filteredProductsList, setFilteredProductsList] = useState<ProductType[]>(newProductsArray);
     const [sortProducts, setSortProducts] = useState<string>('');
 
     //categorie setter to pass to children componenents
@@ -32,11 +34,11 @@ const NewProductsSection = () => {
     //Filter button
     const handleCategoriesFilter = (): void => {
         if (categorie === 'All' || categorie === '') {
-            setFilteredProductsList(prevProductsArray => prevProductsArray = data.products);
+            setFilteredProductsList(prevProductsArray => prevProductsArray = newProductsArray);
             return
         }
         if (categorie !== 'All') {
-            let filteredArray: ProductType[] = data.products.filter(product => product.categorie === categorie);
+            let filteredArray: ProductType[] = newProductsArray.filter(product => product.categorie === categorie);
             setFilteredProductsList(prevProductsArray => prevProductsArray = filteredArray);
         }
     };
