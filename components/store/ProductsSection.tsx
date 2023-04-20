@@ -12,7 +12,7 @@ import Image from 'next/image';
 import { data, ProductType } from '../../util/data';
 
 //import CSS
-import styles from '../../src/styles/store/ProductsSection.module.css';
+import styles from '../../src/styles/store/Store.module.css';
 
 //Types
 type SetterFunctionType = (value: string) => void;

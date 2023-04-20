@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 //import CSS
-import styles from '../../src/styles/store/ProductsSection.module.css';
+import styles from '../../src/styles/store/Store.module.css';
 
 //import banner image
 import bannerImageSrc from '../../src/assets/images/Store Main Banner.png';
