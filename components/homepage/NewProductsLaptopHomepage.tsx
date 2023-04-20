@@ -9,12 +9,12 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 
 //import CSS
-import styles from '../../src/styles/NewProductsLaptop.module.css';
+import styles from '../../src/styles/homepage/NewProductsLaptop.module.css';
 
 //import products
 import { data, ProductType } from '../../util/data';
 
-let newProductsArray: ProductType[] = data.products.filter((product) => product.new)
+const newProductsArray: ProductType[] = data.products.filter((product) => product.new)
 
 //COMPONENT
 const NewProductsLaptop = () => {
