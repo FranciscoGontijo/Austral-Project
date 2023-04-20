@@ -1,5 +1,28 @@
 //Mock all datas here
 
+//HOMPAGE HIGHLIGHTS BANNERS 
+//import images
+import highlightsFirstImageSrc from '../src/assets/images/homepage/Highlights Main.webp';
+import highlightsSecondImageSrc from '../src/assets/images/homepage/Highlights T-shirt.webp';
+import highlightsThirdImageSrc from '../src/assets/images/homepage/Highlights Jackets.webp';
+import highlightsFourthImageSrc from '../src/assets/images/homepage/Highlights Sales.webp';
+
+export type HighlightBannerType = {
+    imageSrc: any;
+    pageHref: string;
+    descriptionTitle: string;
+    description: string
+};
+
+export const HighlightBannerArray: HighlightBannerType[] = [
+    { imageSrc: highlightsFirstImageSrc, pageHref: '/store', descriptionTitle: 'Winter 23', description: "Tomorrow is not just about the future, but also a reminder that the present is the moment to choose new paths." },
+    { imageSrc: highlightsSecondImageSrc, pageHref: '/store/t-shirts', descriptionTitle: 'T-shirts', description: "Explore Austral's classic t-shirts. Made domestically with the highest quality materials available in the national market. The cotton used is BCI® certified, ensuring low environmental impact." },
+    { imageSrc: highlightsThirdImageSrc, pageHref: '/store/jackets', descriptionTitle: 'Jackets', description: "Austral's jackets not only adapt to different temperatures and occasions, but are also made with technological and sustainable fabrics that ensure durability and style at the same time." },
+    { imageSrc: highlightsFourthImageSrc, pageHref: '/salespage', descriptionTitle: 'Sales', description: "Selected items with discounts. Austral's promotions are available for a limited time. Explore products with special buying opportunities. We suggest using size filters for better navigation." },
+]
+
+
+
 //PRODUCTS DATA
 //import products images
 import hoodieEcoLinenGraySrc from '../src/assets/images/products/Hoodie Eco Linen gray.webp';
@@ -22,7 +45,7 @@ export type ProductType = {
     categorie: string;
     color: string;
     pageHref: string;
-    key: string;
+    productId: string;
     new: boolean;
     sales: boolean;
 }
@@ -42,7 +65,7 @@ export const data: DataType = {
             categorie:'T-shirt',
             color: 'green',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: true
         },
@@ -53,7 +76,7 @@ export const data: DataType = {
             categorie:'T-shirt',
             color: 'blue',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: false
         },
@@ -64,7 +87,7 @@ export const data: DataType = {
             categorie:'T-shirt',
             color: 'black',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: false
         },
@@ -75,7 +98,7 @@ export const data: DataType = {
             categorie:'T-shirt',
             color: 'white',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: false,
             sales: true
         },
@@ -86,7 +109,7 @@ export const data: DataType = {
             categorie: 'Hoodie',
             color: 'gray',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: false,
             sales: true
         },
@@ -97,7 +120,7 @@ export const data: DataType = {
             categorie: 'Hoodie',
             color: 'green',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: false,
             sales: true
         },
@@ -108,7 +131,7 @@ export const data: DataType = {
             categorie: 'Sweatshirt',
             color: 'black',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: true
         },
@@ -119,7 +142,7 @@ export const data: DataType = {
             categorie: 'Hoodie',
             color: 'off white',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: false
         },
@@ -130,7 +153,7 @@ export const data: DataType = {
             categorie: 'Shirt',
             color: 'black',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: false
         },
@@ -141,7 +164,7 @@ export const data: DataType = {
             categorie: 'Swimshorts',
             color: 'green',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: false
         },
@@ -152,7 +175,7 @@ export const data: DataType = {
             categorie: 'Hoodie',
             color: 'navy',
             pageHref: '/store/productid',
-            key: '',
+            productId: '',
             new: true,
             sales: true
         }
