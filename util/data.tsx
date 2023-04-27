@@ -43,10 +43,12 @@ export type ProductType = {
     imageSrc: any;
     price: number;
     categorie: string;
-    color: string;
+    color: string[];
     productId: string;
     new: boolean;
     sales: boolean;
+    description: string;
+    related: string[];
 }
 
 //Full mocked data structure type
@@ -62,110 +64,132 @@ export const data: DataType = {
             imageSrc: tshirtJungleStoneGreenSrc,
             price: 75,
             categorie:'T-shirt',
-            color: 'green',
+            color: ['green'],
             productId: 'product1',
             new: true,
-            sales: true
+            sales: true,
+            description: 'hey',
+            related: ['product3', 'product7', 'product8', 'product10']
         },
         {
             name: 'T-Shirt Time Stone',
             imageSrc: tshirtTimeStoneBlueSrc,
             price: 75,
             categorie:'T-shirt',
-            color: 'blue',
+            color: ['blue'],
             productId: 'product2',
             new: true,
-            sales: false
+            sales: false,
+            description: 'hey',
+            related: ['product3', 'product7', 'product8', 'product9']
         },
         {
             name: 'T-Shirt Journey Stone',
             imageSrc: tshirtJourneyStoneBlackSrc,
             price: 80,
             categorie:'T-shirt',
-            color: 'black',
+            color: ['black'],
             productId: 'product3',
             new: true,
-            sales: false
+            sales: false,
+            description: 'hey',
+            related: ['product1', 'product7', 'product8', 'product11']
         },
         {
             name: 'T-Shirt River',
             imageSrc: tshirtRiverwhiteSrc,
             price: 75,
             categorie:'T-shirt',
-            color: 'white',
+            color: ['white'],
             productId: 'product4',
             new: false,
-            sales: true
+            sales: true,
+            description: 'hey',
+            related: ['product3', 'product7', 'product8', 'product10']
         },
         {
             name: 'Hoodie Eco Linen',
             imageSrc: hoodieEcoLinenGraySrc,
             price: 120,
             categorie: 'Hoodie',
-            color: 'gray',
+            color: ['gray'],
             productId: 'product5',
             new: false,
-            sales: true
+            sales: true,
+            description: 'hey',
+            related: ['product6', 'product7', 'product8', 'product10']
         },
         {
             name: 'Hoodie Eco Recycle',
             imageSrc: hoodieEcoRecycleGraySrc,
             price: 110,
             categorie: 'Hoodie',
-            color: 'green',
+            color: ['green'],
             productId: 'product6',
             new: false,
-            sales: true
+            sales: true,
+            description: 'hey',
+            related: ['product1', 'product2', 'product3', 'product9']
         },
         {
             name: 'Sweatshirt Statue',
             imageSrc: sweatshirtStatueNavySrc,
             price: 100,
             categorie: 'Sweatshirt',
-            color: 'black',
+            color: ['black', 'red'],
             productId: 'product7',
             new: true,
-            sales: true
+            sales: true,
+            description: 'hey',
+            related: ['product1', 'product6', 'product8', 'product10']
         },
         {
             name: 'Hoodie Journey',
             imageSrc: hoodieJourneyOffWhiteSrc,
             price: 120,
             categorie: 'Hoodie',
-            color: 'off white',
+            color: ['off white'],
             productId: 'product8',
             new: true,
-            sales: false
+            sales: false,
+            description: 'hey',
+            related: ['product2', 'product3', 'product9', 'product10']
         },
         {
             name: 'Shirt Hawke',
             imageSrc: shirtHawkeBlackSrc,
             price: 140,
             categorie: 'Shirt',
-            color: 'black',
+            color: ['black'],
             productId: 'product9',
             new: true,
-            sales: false
+            sales: false,
+            description: 'hey',
+            related: ['product1', 'product3', 'product4', 'product10']
         },
         {
             name: 'Swimshorts Miramar',
             imageSrc: swimshortsMiramarGreenSrc,
             price: 60,
             categorie: 'Swimshorts',
-            color: 'green',
+            color: ['green'],
             productId: 'product10',
             new: true,
-            sales: false
+            sales: false,
+            description: 'hey',
+            related: ['product3', 'product5', 'product8', 'product11']
         },
         {
             name: 'Hoodie Nuestro',
             imageSrc: hoodieNuestroNavySrc,
             price: 110,
             categorie: 'Hoodie',
-            color: 'navy',
+            color: ['navy'],
             productId: 'product11',
             new: true,
-            sales: true
+            sales: true,
+            description: 'hey',
+            related: ['product2', 'product4', 'product7', 'product10']
         }
     ]
 };
