@@ -98,7 +98,7 @@ const SalesProductsSection = () => {
                     {filteredProductsList.map((product) => {
                         return (
                             <div key={product.name} className={styles.product_container}>
-                                <Link className={styles.link} href={product.pageHref}>
+                                <Link className={styles.link} href={`/store/${product.productId}`}>
                                     <div className={styles.image_container}>
                                         <Image
                                             src={product.imageSrc}

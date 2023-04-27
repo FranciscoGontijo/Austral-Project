@@ -44,7 +44,6 @@ export type ProductType = {
     price: number;
     categorie: string;
     color: string;
-    pageHref: string;
     productId: string;
     new: boolean;
     sales: boolean;
@@ -64,8 +63,7 @@ export const data: DataType = {
             price: 75,
             categorie:'T-shirt',
             color: 'green',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product1',
             new: true,
             sales: true
         },
@@ -75,8 +73,7 @@ export const data: DataType = {
             price: 75,
             categorie:'T-shirt',
             color: 'blue',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product2',
             new: true,
             sales: false
         },
@@ -86,8 +83,7 @@ export const data: DataType = {
             price: 80,
             categorie:'T-shirt',
             color: 'black',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product3',
             new: true,
             sales: false
         },
@@ -97,8 +93,7 @@ export const data: DataType = {
             price: 75,
             categorie:'T-shirt',
             color: 'white',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product4',
             new: false,
             sales: true
         },
@@ -108,8 +103,7 @@ export const data: DataType = {
             price: 120,
             categorie: 'Hoodie',
             color: 'gray',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product5',
             new: false,
             sales: true
         },
@@ -119,8 +113,7 @@ export const data: DataType = {
             price: 110,
             categorie: 'Hoodie',
             color: 'green',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product6',
             new: false,
             sales: true
         },
@@ -130,8 +123,7 @@ export const data: DataType = {
             price: 100,
             categorie: 'Sweatshirt',
             color: 'black',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product7',
             new: true,
             sales: true
         },
@@ -141,8 +133,7 @@ export const data: DataType = {
             price: 120,
             categorie: 'Hoodie',
             color: 'off white',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product8',
             new: true,
             sales: false
         },
@@ -152,8 +143,7 @@ export const data: DataType = {
             price: 140,
             categorie: 'Shirt',
             color: 'black',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product9',
             new: true,
             sales: false
         },
@@ -163,8 +153,7 @@ export const data: DataType = {
             price: 60,
             categorie: 'Swimshorts',
             color: 'green',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product10',
             new: true,
             sales: false
         },
@@ -174,8 +163,7 @@ export const data: DataType = {
             price: 110,
             categorie: 'Hoodie',
             color: 'navy',
-            pageHref: '/store/productid',
-            productId: '',
+            productId: 'product11',
             new: true,
             sales: true
         }

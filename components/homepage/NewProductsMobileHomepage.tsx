@@ -49,7 +49,7 @@ const NewProductsMobile = () => {
                 {newProductsArray.slice(currentIndex, currentIndex + 2).map((product, index) => {
                     return (
                         <div key={index} className={styles.product_container}>
-                            <Link className={styles.link} href={product.pageHref}>
+                            <Link className={styles.link} href={`/store/${product.productId}`}>
                                 <div className={styles.image_container}>
                                 <Image
                                     src={product.imageSrc}
