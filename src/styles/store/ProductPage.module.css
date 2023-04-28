@@ -1,5 +1,6 @@
 .product_page {
     margin-top: 58px;
+    color: #1C1C1E;
 }
 
 .main_product_container {
@@ -7,14 +8,34 @@
     flex-direction: column;
 }
 
+@media (min-width: 700px) {
+    .main_product_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1020px) {
+    .product_page {
+        margin-top: 100px;
+    }
+
+    .main_product_container {
+        padding: 20px 5%;
+    }
+}
+
 .main_image {
     width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
 .main_text_container {
     padding: 2%;
     font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .product_info_container {
@@ -55,6 +76,7 @@
 .color_display {
     width: 20px;
     height: 20px;
+    border: 1px solid #1C1C1E;
 }
 
 /* BUTTON ADD TO BAG SECTION */
@@ -73,9 +95,45 @@
     cursor: pointer;
 }
 
-/* RELATED PRODUCTS SECTION */
+/* DIVIDE BAR */
+.bar {
+    height: 1.5px;
+    width: 80%;
+    background-color: #8b8b8b;
+    align-self: center;
+    justify-self: center;
+    margin: 30px 0;
+}
 
-.all_products_container {
+/* PRODUCT DESCRIPTION */
+.product_description_container {
+    padding: 5%;
+}
+
+.product_description_container h3 {
+    margin-bottom: 15px;
+}
+
+/* MOBILE RELATED PRODUCTS SECTION */
+.mobile_related_products_label_container {
+    font-family: Lato, sans-serif;
+    padding: 0 7%;
+    margin: 30px 0;
+}
+
+.mobile_related_products_label_container h3 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+    color:#1C1C1E
+}
+
+.mobile_related_products_label_container h2 {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.mobile_related_products_section .all_products_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4%;
@@ -83,50 +141,127 @@
     padding: 0 10%;
 }
 
-.back_arrow {
+.mobile_related_products_section .back_arrow {
     position: absolute;
     top: 40%;
     left: 0;
     font-size: 40px;
 }
 
-.foward_arrow {
+.mobile_related_products_section .foward_arrow {
     position: absolute;
     top: 40%;
     right: 0;
     font-size: 40px;
 }
 
-.product_container {
+.mobile_related_products_section .product_container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.image_container {
+.mobile_related_products_section .image_container {
     border-radius: 15px;
     overflow: hidden;
     padding: 0;
     margin: 0;
 }
 
-.image {
+.mobile_related_products_section .image {
     height: auto;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.product_container h3 {
+.mobile_related_products_section .product_container h3 {
     width: 100%;
     font-family: Lato, sans-serif;
     font-size: 14px;
-    font-weight: 100;
-    margin-bottom: 5px;
+    font-weight: 400;
+    margin: 10px 0 5px;
 }
 
-.product_container h2 {
+.mobile_related_products_section .product_container h2 {
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* LAPTOP RELATED PRODUCTS */
+.laptop_related_products_label_container {
+    font-family: Lato, sans-serif;
+    padding: 0 7%;
+    margin: 30px 0;
+}
+
+.laptop_related_products_label_container h3 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+    color:#1C1C1E
+}
+
+.laptop_related_products_label_container h2 {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.laptop_related_products_section .all_products_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 4%;
+    position: relative;
+    padding: 0 10%;
+}
+
+.laptop_related_products_section .back_arrow {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    font-size: 40px;
+}
+
+.laptop_related_products_section .foward_arrow {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    font-size: 40px;
+}
+
+.laptop_related_products_section .product_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.laptop_related_products_section .image_container {
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.laptop_related_products_section .image {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.laptop_related_products_section .product_container h3 {
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 0 5px;
+}
+
+.laptop_related_products_section .product_container h2 {
     width: 100%;
     font-family: Lato, sans-serif;
     font-size: 14px;

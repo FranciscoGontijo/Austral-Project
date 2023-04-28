@@ -22,7 +22,6 @@ export const HighlightBannerArray: HighlightBannerType[] = [
 ]
 
 
-
 //PRODUCTS DATA
 //import products images
 import hoodieEcoLinenGraySrc from '../src/assets/images/products/Hoodie Eco Linen gray.webp';
@@ -68,7 +67,7 @@ export const data: DataType = {
             productId: 'product1',
             new: true,
             sales: true,
-            description: 'hey',
+            description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
             related: ['product3', 'product7', 'product8', 'product10']
         },
         {
@@ -80,7 +79,7 @@ export const data: DataType = {
             productId: 'product2',
             new: true,
             sales: false,
-            description: 'hey',
+            description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
             related: ['product3', 'product7', 'product8', 'product9']
         },
         {
@@ -92,7 +91,7 @@ export const data: DataType = {
             productId: 'product3',
             new: true,
             sales: false,
-            description: 'hey',
+            description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
             related: ['product1', 'product7', 'product8', 'product11']
         },
         {
@@ -104,7 +103,7 @@ export const data: DataType = {
             productId: 'product4',
             new: false,
             sales: true,
-            description: 'hey',
+            description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
             related: ['product3', 'product7', 'product8', 'product10']
         },
         {
@@ -116,7 +115,7 @@ export const data: DataType = {
             productId: 'product5',
             new: false,
             sales: true,
-            description: 'hey',
+            description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.',
             related: ['product6', 'product7', 'product8', 'product10']
         },
         {
@@ -128,7 +127,7 @@ export const data: DataType = {
             productId: 'product6',
             new: false,
             sales: true,
-            description: 'hey',
+            description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.y',
             related: ['product1', 'product2', 'product3', 'product9']
         },
         {
@@ -136,11 +135,11 @@ export const data: DataType = {
             imageSrc: sweatshirtStatueNavySrc,
             price: 100,
             categorie: 'Sweatshirt',
-            color: ['black', 'red'],
+            color: ['black'],
             productId: 'product7',
             new: true,
             sales: true,
-            description: 'hey',
+            description: 'The Sweatshirt is an excellent clothing option for moderately cold days, offering comfort and style with its crew neck and regular fit. Made of plush-free fabric, the piece has a zero touch silk print with water-based ink, bringing a modern and sophisticated look.',
             related: ['product1', 'product6', 'product8', 'product10']
         },
         {
@@ -148,11 +147,11 @@ export const data: DataType = {
             imageSrc: hoodieJourneyOffWhiteSrc,
             price: 120,
             categorie: 'Hoodie',
-            color: ['off white'],
+            color: ['white', 'navy'],
             productId: 'product8',
             new: true,
             sales: false,
-            description: 'hey',
+            description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.',
             related: ['product2', 'product3', 'product9', 'product10']
         },
         {
@@ -164,7 +163,7 @@ export const data: DataType = {
             productId: 'product9',
             new: true,
             sales: false,
-            description: 'hey',
+            description: 'Long-sleeved flannel shirt, pre-washed and softened, in a two-tone enlarged plaid print. The piece has regular modeling, with buttons of exclusive development in burst mass.',
             related: ['product1', 'product3', 'product4', 'product10']
         },
         {
@@ -176,7 +175,7 @@ export const data: DataType = {
             productId: 'product10',
             new: true,
             sales: false,
-            description: 'hey',
+            description: 'Water shorts, with elastic waistband, metallic eyelets and drawstring with metallic tip for tying and adjustment. The piece is made of polyamide, ensuring quick drying, greater durability and breathability. The Swimshorts have an internal lining in polyamide fabric, bringing comfort and safety in use. The front pockets are knife-shaped and the back pocket is flat.',
             related: ['product3', 'product5', 'product8', 'product11']
         },
         {
@@ -188,7 +187,7 @@ export const data: DataType = {
             productId: 'product11',
             new: true,
             sales: true,
-            description: 'hey',
+            description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.',
             related: ['product2', 'product4', 'product7', 'product10']
         }
     ]
