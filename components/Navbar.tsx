@@ -20,6 +20,8 @@ import styles from "../src/styles/Navbar.module.css";
 const NavBar = () => {
     const [display, setDisplay] = useState('hidden');
 
+    const counter: number = 0;
+
     return (
         <>
             <header className={styles.small_screen_header}>
@@ -35,7 +37,10 @@ const NavBar = () => {
                 </Link>
                 <div className={styles.header_bag_container}>
                     <BiUserCircle className={styles.user_icon} />
-                    <BsBag className={styles.user_icon} />
+                    <div className={styles.bag_counter_container}>
+                        <div className={styles.bag_counter}>{counter}</div>
+                        <BsBag className={styles.user_icon} />
+                    </div>
                 </div>
             </header>
             <header className={styles.big_screen_header}>
@@ -55,7 +60,10 @@ const NavBar = () => {
                 <div className={styles.header_icons_container}>
                     <FiPhone className={styles.user_icon} />
                     <BiUserCircle className={styles.user_icon} />
-                    <BsBag className={styles.user_icon} />
+                    <div className={styles.bag_counter_container}>
+                        <div className={styles.bag_counter}>{counter}</div>
+                        <BsBag className={styles.user_icon} />
+                    </div>
                 </div>
             </header>
             {display === 'shown' && <div className={styles.mask_background}>
