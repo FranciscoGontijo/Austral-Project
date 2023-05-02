@@ -18,11 +18,33 @@ import useWindowSize from '../../../util/useWindowSize';
 import RelatedProductsMobile from '../../../components/store/RelatedProductsMobile';
 import RelatedProductsLaptop from '../../../components/store/RelatedProductsLaptop';
 
+type ProductAtCart = {
+    name: string,
+    price: number,
+    imageSrc: string,
+    size: string,
+    selectedColor: string
+}
+
 const Profile = () => {
     //filter param
     const router = useRouter();
     const { productid } = router.query;
     const screenSize: { width: number | undefined; height: number | undefined } = useWindowSize();
+    const [productToAdd, setProductToAdd] = useState<ProductAtCart>({
+        name: '',
+        selectedColor: '',
+        price: 0,
+        imageSrc: '',
+        size: ''
+    })
+
+    //Need a default color
+    //maybe besides a clickable div, use check box instead
+    //other colors be less visible when not selected
+    //if productColor === not chosen yet then color dispay smoked
+    //when cliked the chosen one change de index number and get out of the smoked display
+
 
     //Use screenSize
     const [display, setDisplay] = useState<string>('laptop');
@@ -39,6 +61,7 @@ const Profile = () => {
         }
     }, [screenSize]);
 
+    //Set product
     const [product, setProduct] = useState<ProductType>({
         name: '',
         imageSrc: '',
@@ -49,7 +72,8 @@ const Profile = () => {
         new: true,
         sales: true,
         description: '',
-        related: ['']
+        related: [''],
+        sizes: ['']
     });
 
 
@@ -73,9 +97,22 @@ const Profile = () => {
                     <div className={styles.product_info_container}>
                         <h3 className={styles.product_name}>{product?.name}</h3>
                         <h2 className={styles.product_price}>$ {product?.price}.00</h2>
-                        <h3 className={styles.color_display_label}>Color:</h3>
+                        <h3 className={styles.color_display_label}>Color :</h3>
                         <div className={styles.color_display_container}>
-                            {product?.color.map((color) => <div className={styles.color_display} style={{ backgroundColor: color }}></div>)}
+                            {product?.color.map((color) => {
+                                return (
+                                    <div
+                                        title={color}
+                                        onClick={() => setProductToAdd(prevObj => prevObj = { ...productToAdd, selectedColor: color })}
+                                        className={styles.color_display}
+                                        style={{ backgroundColor: color }}
+                                    >
+                                        {productToAdd.selectedColor !== color &&
+                                            <div className={styles.color_display_mask}></div>
+                                        }
+                                    </div>
+                                )
+                            })}
                         </div>
                         <button className={styles.add_to_bag_button}>Add to bag</button>
                     </div>

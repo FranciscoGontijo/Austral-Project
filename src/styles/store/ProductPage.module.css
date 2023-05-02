@@ -73,10 +73,21 @@
     margin-bottom: 20px;
 }
 
+.color_display_mask {
+    background-color: rgba(255, 255, 255, 0.625);
+    border: 1px solid black;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 2px 5px rgb(255, 255, 255);
+}
+
 .color_display {
     width: 20px;
     height: 20px;
-    border: 1px solid #1C1C1E;
+    border: 1px solid #000000;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px .5px rgba(0, 0, 0, 0.424);   
 }
 
 /* BUTTON ADD TO BAG SECTION */
