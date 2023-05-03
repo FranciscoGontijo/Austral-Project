@@ -14,10 +14,10 @@ import findQuantityPerCategorie, { CategorieArrayType, CategorieObjectType } fro
 type SetterFunctionType = (value: string) => void;
 type FilterComponentProps = {
     categorieSetter: SetterFunctionType;
-  };
+};
 
 const FilterComponent = ({ categorieSetter }: FilterComponentProps) => {
-    
+
     const [quantityPerCategorieArray, setQuantityPerCategorieArray] = useState<CategorieArrayType>([]);
 
     useEffect(() => {
@@ -28,11 +28,17 @@ const FilterComponent = ({ categorieSetter }: FilterComponentProps) => {
         <section className={styles.filter_section}>
             <h2>Filter per</h2>
             <ul className={styles.list_container}>
-            {quantityPerCategorieArray.map((categorieObject: CategorieObjectType, index: number) => {
-                return (
-                    <li className={styles.list_item} key={index} onClick={() => categorieSetter(categorieObject.name)}>{`${categorieObject.name} (${categorieObject.quantity})`}</li>
-                )
-            })}
+                {quantityPerCategorieArray.map((categorieObject: CategorieObjectType, index: number) => {
+                    return (
+                        <li
+                            className={styles.list_item}
+                            key={index}
+                            onClick={() => categorieSetter(categorieObject.name)}
+                        >
+                            {`${categorieObject.name} (${categorieObject.quantity})`}
+                        </li>
+                    )
+                })}
             </ul>
         </section>
     )
