@@ -4,6 +4,12 @@
     display: flex;
 }
 
+@media (min-width: 1020px) {
+    .contact_page {
+        margin-top: 100px;
+    }
+}
+
 /* FORM SECTION */
 .form_container {
     padding: 5% 3%;
@@ -94,3 +100,38 @@
     background-color: #5881CA;
 }
 
+/* SENDED MESSAGE SECTION */
+.sended_message_section {
+    font-family: Lato, sans-serif;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5%;
+    margin: 30px auto;
+}
+
+.sended_message_section h1 {
+    margin-bottom: 8px;
+}
+
+.sended_message_section button {
+    height: 30px;
+    width: 100px;
+    background-color: #5881CA;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.sended_message_section button:active {
+    background-color: #78aaff;
+    border: 2px solid #5881CA;
+}
+
+@media (min-width: 800px) {
+    .sended_message_section {
+        margin: 100px auto;
+    }
+}

@@ -17,10 +17,10 @@ const ContactPage = () => {
                     <button type="submit" value="Send"  className={styles.form_send_button}>SEND MESSAGE</button>
                 </form>
             </div>}
-            {display === 'message' && <div>
+            {display === 'message' && <div className={styles.sended_message_section}>
                 <h1>Message sent successfully</h1>
                 <p>Thank you for getting in touch, as soon as possible I will respond to your message. Cheers</p>
-                <button>Back</button>
+                <button onClick={() => setDisplay('form')}>Back</button>
             </div>}
         </section>
     )
