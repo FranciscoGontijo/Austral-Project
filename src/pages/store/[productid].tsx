@@ -1,4 +1,11 @@
+//Import React
 import { useState, useEffect } from 'react';
+
+//Import Redux
+import { useDispatch } from 'react-redux';
+
+//Import Redux Slices Actions
+import { addProduct } from '../../../redux/slices/shoppingCartSlice';
 
 //import next
 import Image from "next/image";
@@ -21,23 +28,49 @@ import RelatedProductsLaptop from '../../../components/store/RelatedProductsLapt
 type ProductAtCart = {
     name: string,
     price: number,
-    imageSrc: string,
+    imageSrc: {
+        src: string,
+        height: number,
+        width: number,
+        blurDataURL: string,
+        blurWidth: number,
+        blurHeight: number
+    },
     size: string,
-    selectedColor: string
+    color: string
 }
 
 const Profile = () => {
     //filter param
     const router = useRouter();
+    const dispatch = useDispatch();
     const { productid } = router.query;
     const screenSize: { width: number | undefined; height: number | undefined } = useWindowSize();
     const [productToAdd, setProductToAdd] = useState<ProductAtCart>({
         name: '',
-        selectedColor: '',
+        color: '',
         price: 0,
-        imageSrc: '',
+        imageSrc: {
+            src: '',
+            height: 0,
+            width: 0,
+            blurDataURL: '',
+            blurWidth: 0,
+            blurHeight: 0
+        },
         size: ''
     })
+
+    const addItemToCart = (): void => {
+        console.log(productToAdd);
+        //if color and size is selected then dispatch
+        if (productToAdd.color !== '' && productToAdd.size !== '') {
+            dispatch(addProduct(productToAdd))
+            console.log('worked');
+        } else {
+            console.log('Need to select color and size');
+        }
+    }
 
     //Need a default color
     //maybe besides a clickable div, use check box instead
@@ -78,7 +111,9 @@ const Profile = () => {
 
 
     useEffect(() => {
-        setProduct(data.products.filter((productObj) => productObj.productId === productid)[0])
+        const currentProduct: ProductType = data.products.filter((productObj) => productObj.productId === productid)[0]
+        setProduct(currentProduct);
+        setProductToAdd((prevObj) => prevObj = { ...prevObj, name: currentProduct?.name, price: currentProduct?.price, imageSrc: currentProduct?.imageSrc })
     }, [productid])
 
     //COLOR DISPLAY: ON CLICK SET STATE TO THAT COLOR TO PASS LATER TO THE SHOOPING BAG
@@ -103,18 +138,32 @@ const Profile = () => {
                                 return (
                                     <div
                                         title={color}
-                                        onClick={() => setProductToAdd(prevObj => prevObj = { ...productToAdd, selectedColor: color })}
+                                        onClick={() => setProductToAdd(prevObj => prevObj = { ...productToAdd, color: color })}
                                         className={styles.color_display}
                                         style={{ backgroundColor: color }}
                                     >
-                                        {productToAdd.selectedColor !== color &&
+                                        {productToAdd.color !== color &&
                                             <div className={styles.color_display_mask}></div>
                                         }
                                     </div>
                                 )
                             })}
                         </div>
-                        <button className={styles.add_to_bag_button}>Add to bag</button>
+                        <h3 className={styles.color_display_label}>Sizes :</h3>
+                        <div className={styles.size_display_container}>
+                            {product?.sizes.map((size) => {
+                                return (
+                                    <div
+                                        onClick={() => setProductToAdd((prevObj) => prevObj = { ...productToAdd, size: size })}
+                                        className={styles.size_display}
+                                    >
+                                        {productToAdd.size === size && <div className={styles.selected_size}>{size}</div>}
+                                        {productToAdd.size !== size && size}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <button onClick={addItemToCart} className={styles.add_to_bag_button}>Add to bag</button>
                     </div>
                     <div className={styles.bar}></div>
                     <div className={styles.product_description_container}>

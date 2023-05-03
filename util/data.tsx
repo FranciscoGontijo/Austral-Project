@@ -16,8 +16,8 @@ export type HighlightBannerType = {
 
 export const HighlightBannerArray: HighlightBannerType[] = [
     { imageSrc: highlightsFirstImageSrc, pageHref: '/store', descriptionTitle: 'Winter 23', description: "Tomorrow is not just about the future, but also a reminder that the present is the moment to choose new paths." },
-    { imageSrc: highlightsSecondImageSrc, pageHref: '/store/t-shirts', descriptionTitle: 'T-shirts', description: "Explore Austral's classic t-shirts. Made domestically with the highest quality materials available in the national market. The cotton used is BCI® certified, ensuring low environmental impact." },
-    { imageSrc: highlightsThirdImageSrc, pageHref: '/store/jackets', descriptionTitle: 'Jackets', description: "Austral's jackets not only adapt to different temperatures and occasions, but are also made with technological and sustainable fabrics that ensure durability and style at the same time." },
+    { imageSrc: highlightsSecondImageSrc, pageHref: '/about', descriptionTitle: 'About Us', description: "Come and find about our story and objectives. Austral family" },
+    { imageSrc: highlightsThirdImageSrc, pageHref: '/newproductspage', descriptionTitle: 'New releases', description: "Austral's new releases. Adapt to different temperatures and occasions, made with technological and sustainable fabrics that ensure durability and style at the same time." },
     { imageSrc: highlightsFourthImageSrc, pageHref: '/salespage', descriptionTitle: 'Sales', description: "Selected items with discounts. Austral's promotions are available for a limited time. Explore products with special buying opportunities. We suggest using size filters for better navigation." },
 ]
 
@@ -48,6 +48,7 @@ export type ProductType = {
     sales: boolean;
     description: string;
     related: string[];
+    sizes: string[];
 }
 
 //Full mocked data structure type
@@ -68,7 +69,8 @@ export const data: DataType = {
             new: true,
             sales: true,
             description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
-            related: ['product3', 'product7', 'product8', 'product10']
+            related: ['product3', 'product7', 'product8', 'product10'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'T-Shirt Time Stone',
@@ -80,7 +82,8 @@ export const data: DataType = {
             new: true,
             sales: false,
             description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
-            related: ['product3', 'product7', 'product8', 'product9']
+            related: ['product3', 'product7', 'product8', 'product9'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'T-Shirt Journey Stone',
@@ -92,7 +95,8 @@ export const data: DataType = {
             new: true,
             sales: false,
             description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
-            related: ['product1', 'product7', 'product8', 'product11']
+            related: ['product1', 'product7', 'product8', 'product11'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'T-Shirt River',
@@ -104,7 +108,8 @@ export const data: DataType = {
             new: false,
             sales: true,
             description: 'T-shirt in 100% combed cotton 01/30, pre-shrunk, pre-washed and softened. The piece has seam reinforcements on the collar and shoulders, for better structure and durability. The print is made with water-based ink to minimize the environmental impact and reduce the use of chemical products in the manufacture of the piece.',
-            related: ['product3', 'product7', 'product8', 'product10']
+            related: ['product3', 'product7', 'product8', 'product10'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Hoodie Eco Linen',
@@ -116,7 +121,8 @@ export const data: DataType = {
             new: false,
             sales: true,
             description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.',
-            related: ['product6', 'product7', 'product8', 'product10']
+            related: ['product6', 'product7', 'product8', 'product10'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Hoodie Eco Recycle',
@@ -128,7 +134,8 @@ export const data: DataType = {
             new: false,
             sales: true,
             description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.y',
-            related: ['product1', 'product2', 'product3', 'product9']
+            related: ['product1', 'product2', 'product3', 'product9'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Sweatshirt Statue',
@@ -140,7 +147,8 @@ export const data: DataType = {
             new: true,
             sales: true,
             description: 'The Sweatshirt is an excellent clothing option for moderately cold days, offering comfort and style with its crew neck and regular fit. Made of plush-free fabric, the piece has a zero touch silk print with water-based ink, bringing a modern and sophisticated look.',
-            related: ['product1', 'product6', 'product8', 'product10']
+            related: ['product1', 'product6', 'product8', 'product10'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Hoodie Journey',
@@ -152,7 +160,8 @@ export const data: DataType = {
             new: true,
             sales: false,
             description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.',
-            related: ['product2', 'product3', 'product9', 'product10']
+            related: ['product2', 'product3', 'product9', 'product10'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Shirt Hawke',
@@ -164,7 +173,8 @@ export const data: DataType = {
             new: true,
             sales: false,
             description: 'Long-sleeved flannel shirt, pre-washed and softened, in a two-tone enlarged plaid print. The piece has regular modeling, with buttons of exclusive development in burst mass.',
-            related: ['product1', 'product3', 'product4', 'product10']
+            related: ['product1', 'product3', 'product4', 'product10'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Swimshorts Miramar',
@@ -176,7 +186,8 @@ export const data: DataType = {
             new: true,
             sales: false,
             description: 'Water shorts, with elastic waistband, metallic eyelets and drawstring with metallic tip for tying and adjustment. The piece is made of polyamide, ensuring quick drying, greater durability and breathability. The Swimshorts have an internal lining in polyamide fabric, bringing comfort and safety in use. The front pockets are knife-shaped and the back pocket is flat.',
-            related: ['product3', 'product5', 'product8', 'product11']
+            related: ['product3', 'product5', 'product8', 'product11'],
+            sizes: ['S', 'M', 'L']
         },
         {
             name: 'Hoodie Nuestro',
@@ -188,7 +199,8 @@ export const data: DataType = {
             new: true,
             sales: true,
             description: 'The Hoodie is the perfect choice for moderately cold days, with its fluff-free fabric that ensures comfort and freedom of movement. The kangaroo fit offers practicality and style, as well as keeping your hands warm. The zero touch silk print with water-based ink gives the piece durability, without compromising quality.',
-            related: ['product2', 'product4', 'product7', 'product10']
+            related: ['product2', 'product4', 'product7', 'product10'],
+            sizes: ['S', 'M', 'L']
         }
     ]
 };
