@@ -1,28 +1,26 @@
 import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
+import styles from '@/styles/homepage/Home.module.css';
 
 //import images;
 
 
 //import components
-import MainBanner from '../../components/MainBanner';
-import HighlightsMobileHomepage from '../../components/HighlightsMobileHomepage';
-import HighlightsLaptopHomepage from '../../components/HighlightsLaptopHomepage';
-import NewProductsLaptop from '../../components/NewProductsLaptopHomepage';
-import NewProductMobile from '../../components/NewProductsMobileHomepage';
+import MainBanner from '../../components/homepage/MainBanner';
+import HighlightsMobileHomepage from '../../components/homepage/HighlightsMobileHomepage';
+import HighlightsLaptopHomepage from '../../components/homepage/HighlightsLaptopHomepage';
+import NewProductsLaptop from '../../components/homepage/NewProductsLaptopHomepage';
+import NewProductMobile from '../../components/homepage/NewProductsMobileHomepage';
 
 //import utils
 import useWindowSize from '../../util/useWindowSize';
 
 const Home: NextPage = () => {
-  const screenSize: {width: number | undefined; height: number | undefined} = useWindowSize();
+  const screenSize: { width: number | undefined; height: number | undefined } = useWindowSize();
   const [display, setDisplay] = useState<string>('laptop');
 
-  useEffect(() => { 
+  useEffect(() => {
     if (screenSize.width === undefined) {
       return
     }
@@ -35,15 +33,17 @@ const Home: NextPage = () => {
   }, [screenSize]);
 
   return (
-    <main className={styles.homepage}>
+    <main>
       <Head>
         <title>Austral Store</title>
       </Head>
-      <MainBanner />
-      {display === 'mobile' && <HighlightsMobileHomepage />}
-      {display === 'laptop' && <HighlightsLaptopHomepage />}
-      {display === 'mobile' && <NewProductMobile />}
-      {display === 'laptop' && <NewProductsLaptop />}
+      <div className={styles.homepage}>
+        <MainBanner />
+        {display === 'mobile' && <HighlightsMobileHomepage />}
+        {display === 'laptop' && <HighlightsLaptopHomepage />}
+        {display === 'mobile' && <NewProductMobile />}
+        {display === 'laptop' && <NewProductsLaptop />}
+      </div>
     </main>
   )
 };

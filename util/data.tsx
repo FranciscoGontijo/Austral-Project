@@ -1,6 +1,62 @@
 //Mock all datas here
 
-//HOMPAGE HIGHLIGHTS BANNERS 
+//HOMEPAGE MAIN BANNER IMAGE ARRAY
+//Import images
+import mainBannerFirstImageSrc from '../src/assets/images/homepage/Banner 1.png';
+import mainBannerSecondImageSrc from '../src/assets/images/homepage/Banner 2.webp';
+import mainBannerThirdImageSrc from '../src/assets/images/homepage/Banner 3.webp';
+import mainBannerFourthImageSrc from '../src/assets/images/homepage/Highlights Sales.webp';
+
+export type CategorieType = {
+    imageSrc: any;
+    pageHref: string;
+    collectionTitle: string;
+    bannerTitle: string;
+    bannerText: string;
+    buttonText: string;
+    textColor: string;
+};
+
+export const bannerImagesArray: CategorieType[] = [
+    {
+        imageSrc: mainBannerFirstImageSrc,
+        pageHref: '/newproductspage',
+        collectionTitle: 'Winter 23',
+        bannerTitle: 'Tomorrow',
+        bannerText: 'The new collection from austral to warm your winter',
+        buttonText: 'Shop Now',
+        textColor: 'white'
+    },
+    {
+        imageSrc: mainBannerSecondImageSrc,
+        pageHref: '/store/jackets',
+        collectionTitle: 'Winter 23',
+        bannerTitle: 'Jackets',
+        bannerText: 'Produced with technological and sustainable fabric, which guarantee durability and style.',
+        buttonText: 'Shop Now',
+        textColor: 'white'
+    },
+    {
+        imageSrc: mainBannerThirdImageSrc,
+        pageHref: '/store/tshirts',
+        collectionTitle: 'Winter 23',
+        bannerTitle: 'T-shirts',
+        bannerText: 'Os casacos da Austral, além de se adaptarem a diferentes temperaturas e ocasiões, também são produzidos com tecidos tecnológicos e sustentáveis, que garantem durabilidade e estilo ao mesmo tempo.',
+        buttonText: 'Shop Now',
+        textColor: 'black'
+    },
+    {
+        imageSrc: mainBannerFourthImageSrc,
+        pageHref: '/salespage',
+        collectionTitle: '',
+        bannerTitle: '',
+        bannerText: '',
+        buttonText: '',
+        textColor: 'white'
+    }
+]
+
+//HOMEPAGE HIGHLIGHTS BANNERS 
 //import images
 import highlightsFirstImageSrc from '../src/assets/images/homepage/Highlights Main.webp';
 import highlightsSecondImageSrc from '../src/assets/images/homepage/Highlights T-shirt.webp';
@@ -63,7 +119,7 @@ export const data: DataType = {
             name: 'T-Shirt Jungle Stone',
             imageSrc: tshirtJungleStoneGreenSrc,
             price: 75,
-            categorie:'T-shirt',
+            categorie: 'T-shirt',
             color: ['green', 'black', 'lightblue'],
             productId: 'product1',
             new: true,
@@ -76,7 +132,7 @@ export const data: DataType = {
             name: 'T-Shirt Time Stone',
             imageSrc: tshirtTimeStoneBlueSrc,
             price: 75,
-            categorie:'T-shirt',
+            categorie: 'T-shirt',
             color: ['blue', 'gray', 'green'],
             productId: 'product2',
             new: true,
@@ -89,7 +145,7 @@ export const data: DataType = {
             name: 'T-Shirt Journey Stone',
             imageSrc: tshirtJourneyStoneBlackSrc,
             price: 80,
-            categorie:'T-shirt',
+            categorie: 'T-shirt',
             color: ['black', 'green', 'white'],
             productId: 'product3',
             new: true,
@@ -102,7 +158,7 @@ export const data: DataType = {
             name: 'T-Shirt River',
             imageSrc: tshirtRiverwhiteSrc,
             price: 75,
-            categorie:'T-shirt',
+            categorie: 'T-shirt',
             color: ['white', 'lightblue', 'green'],
             productId: 'product4',
             new: false,
