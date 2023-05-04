@@ -1,5 +1,5 @@
 //import main
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 //import Next components
 import Link from "next/link";
@@ -10,6 +10,8 @@ import { FiMenu, FiPhone, FiX } from 'react-icons/fi';
 import { BiUserCircle } from 'react-icons/bi';
 import { BsBag } from 'react-icons/bs';
 
+//import util function
+import useWindowSize from '../util/useWindowSize';
 
 //Import images from assets
 import headerLogoSrc from '../src/assets/images/Austral Navbar Logo.png';
@@ -17,16 +19,39 @@ import headerLogoSrc from '../src/assets/images/Austral Navbar Logo.png';
 //import CSS
 import styles from "../src/styles/Navbar.module.css";
 
+//import cart products counter
+import { useSelector } from "react-redux";
+import { productsArray } from "../redux/slices/shoppingCartSlice";
+
+//import Shopping Cart
+import ShoppingCart from "./ShoppingCart"
+
 const NavBar = () => {
     const [display, setDisplay] = useState('hidden');
+    const [cartDisplay, setCartDisplay] = useState<string>('shown');
 
-    const counter: number = 0;
+    const [productsCounter, setProductsCounter] = useState<number>(0);
+
+    const cartProducts = useSelector(productsArray);
+
+    useEffect(() => {
+        let testCounter: number = 0;
+        cartProducts.forEach(product => testCounter += product.quantity);
+        setProductsCounter(testCounter);
+    }, [cartProducts])
+
 
     return (
         <>
             <header className={styles.small_screen_header}>
                 <div className={styles.menu_icon_container}>
-                    <FiMenu className={styles.menu_icon} onClick={() => setDisplay('shown')} />
+                    <FiMenu
+                        className={styles.menu_icon}
+                        onClick={() => {
+                            setDisplay('shown')
+                            setCartDisplay('hidden')
+                        }
+                        } />
                 </div>
                 <Link href="/">
                     <Image
@@ -38,8 +63,8 @@ const NavBar = () => {
                 <div className={styles.header_bag_container}>
                     <BiUserCircle className={styles.user_icon} />
                     <div className={styles.bag_counter_container}>
-                        <div className={styles.bag_counter}>{counter}</div>
-                        <BsBag className={styles.user_icon} />
+                        <div className={styles.bag_counter}>{productsCounter}</div>
+                        <BsBag onClick={() => setCartDisplay('shown')} className={styles.user_icon} />
                     </div>
                 </div>
             </header>
@@ -58,11 +83,11 @@ const NavBar = () => {
                     <li><Link href="/about">ABOUT</Link></li>
                 </ul>
                 <div className={styles.header_icons_container}>
-                    <FiPhone className={styles.user_icon} />
+                    <Link href="/contact"><FiPhone className={styles.user_icon} /></Link>
                     <BiUserCircle className={styles.user_icon} />
                     <div className={styles.bag_counter_container}>
-                        <div className={styles.bag_counter}>{counter}</div>
-                        <BsBag className={styles.user_icon} />
+                        <div className={styles.bag_counter}>{productsCounter}</div>
+                        <BsBag onClick={() => setCartDisplay('shown')} className={styles.user_icon} />
                     </div>
                 </div>
             </header>
@@ -76,11 +101,15 @@ const NavBar = () => {
                         <li><Link onClick={() => setDisplay('hidden')} href="/about">ABOUT</Link></li>
                     </ul>
                     <ul className={styles.navbar_contact_container}>
-                        <li><FiPhone className={styles.phone_icon} /><Link onClick={() => setDisplay('hidden')} className={styles.contact_link} href="/">CONTACT US</Link></li>
+                        <li><Link onClick={() => setDisplay('hidden')} className={styles.contact_link} href="/contact"><FiPhone className={styles.phone_icon} />CONTACT US</Link></li>
                         <li><Link onClick={() => setDisplay('hidden')} href="/">FAQ</Link></li>
                     </ul>
                 </div>
             </div>}
+            {cartDisplay === 'shown' &&
+                <ShoppingCart
+                    counter={productsCounter}
+                    closeCart={() => setCartDisplay('hidden')} />}
         </>
     )
 };

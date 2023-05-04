@@ -177,7 +177,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: royalblue;
+    background-color: #5881CA;
     color: white;
     font-size: 13px;
     height: 18px;
@@ -185,6 +185,5 @@
     border-radius: 50%;
     right: -8px;
     top: -8px;
-
 }
 
