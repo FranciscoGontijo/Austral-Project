@@ -113,6 +113,17 @@
     margin-bottom: 8px;
 }
 
+.sended_message_section a {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.social_icons {
+    font-size: 20px;
+    margin: 20px 20px 0 0;
+}
+
 .sended_message_section button {
     height: 30px;
     width: 100px;
