@@ -46,7 +46,7 @@ type ProductAtCart = {
 
 
 
-const MobileShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
+const ShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
     const [total, setTotal] = useState<number>(0);
     const productsInCart = useSelector(productsArray);
     const dispatch = useDispatch();
@@ -124,4 +124,4 @@ const MobileShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
     )
 };
 
-export default MobileShoppingCart;
+export default ShoppingCart;

@@ -36,7 +36,6 @@ export const cartSlice = createSlice({
         const { name, size, color } = action.payload
         const index = state.products.findIndex(obj => obj.name === name && obj.color === color && obj.size === size);
         state.products[index].quantity++;
-
       } else {
         state.products.push({ ...action.payload, quantity: 1 });
       }

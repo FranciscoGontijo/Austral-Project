@@ -10,9 +10,6 @@ import { FiMenu, FiPhone, FiX } from 'react-icons/fi';
 import { BiUserCircle } from 'react-icons/bi';
 import { BsBag } from 'react-icons/bs';
 
-//import util function
-import useWindowSize from '../util/useWindowSize';
-
 //Import images from assets
 import headerLogoSrc from '../src/assets/images/Austral Navbar Logo.png';
 
@@ -28,16 +25,18 @@ import ShoppingCart from "./ShoppingCart"
 
 const NavBar = () => {
     const [display, setDisplay] = useState('hidden');
-    const [cartDisplay, setCartDisplay] = useState<string>('shown');
-
-    const [productsCounter, setProductsCounter] = useState<number>(0);
+    const [cartDisplay, setCartDisplay] = useState<string>('hidden');
 
     const cartProducts = useSelector(productsArray);
 
+    const [productsCounter, setProductsCounter] = useState<number>(0);
     useEffect(() => {
-        let testCounter: number = 0;
-        cartProducts.forEach(product => testCounter += product.quantity);
-        setProductsCounter(testCounter);
+        let counter: number = 0;
+        cartProducts.forEach(product => counter += product.quantity);
+        setProductsCounter(counter);
+        if (counter > 0) {
+            setCartDisplay('shown');
+        }
     }, [cartProducts])
 
 
