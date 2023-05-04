@@ -9,7 +9,6 @@ import { addProduct } from '../../../redux/slices/shoppingCartSlice';
 
 //import next
 import Image from "next/image";
-import Link from 'next/link';
 import { useRouter } from "next/router";
 
 //import CSS
@@ -40,12 +39,10 @@ type ProductAtCart = {
     color: string
 }
 
-const Profile = () => {
-    //filter param
+const Product = () => {
     const router = useRouter();
     const dispatch = useDispatch();
-    const { productid } = router.query;
-    const screenSize: { width: number | undefined; height: number | undefined } = useWindowSize();
+
     const [productToAdd, setProductToAdd] = useState<ProductAtCart>({
         name: '',
         color: '',
@@ -62,24 +59,16 @@ const Profile = () => {
     })
 
     const addItemToCart = (): void => {
-        console.log(productToAdd);
-        //if color and size is selected then dispatch
         if (productToAdd.color !== '' && productToAdd.size !== '') {
-            dispatch(addProduct(productToAdd))
-            console.log('worked');
+            dispatch(addProduct(productToAdd));
+
         } else {
             console.log('Need to select color and size');
         }
     }
 
-    //Need a default color
-    //maybe besides a clickable div, use check box instead
-    //other colors be less visible when not selected
-    //if productColor === not chosen yet then color dispay smoked
-    //when cliked the chosen one change de index number and get out of the smoked display
-
-
     //Use screenSize
+    const screenSize: { width: number | undefined; height: number | undefined } = useWindowSize();
     const [display, setDisplay] = useState<string>('laptop');
 
     useEffect(() => {
@@ -109,15 +98,14 @@ const Profile = () => {
         sizes: ['']
     });
 
-
+    const { productid } = router.query;
+    
     useEffect(() => {
         const currentProduct: ProductType = data.products.filter((productObj) => productObj.productId === productid)[0]
         setProduct(currentProduct);
         setProductToAdd((prevObj) => prevObj = { ...prevObj, name: currentProduct?.name, price: currentProduct?.price, imageSrc: currentProduct?.imageSrc })
     }, [productid])
 
-    //COLOR DISPLAY: ON CLICK SET STATE TO THAT COLOR TO PASS LATER TO THE SHOOPING BAG
-    //WHEN HOVERED OVER COLOR, APPEARS TEXT BOX WITH THE NAME. ACESSIBILITY
 
     return (
         <section className={styles.product_page}>
@@ -178,4 +166,4 @@ const Profile = () => {
     )
 };
 
-export default Profile;
+export default Product;
