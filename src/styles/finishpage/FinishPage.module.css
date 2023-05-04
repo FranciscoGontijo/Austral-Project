@@ -1,0 +1,87 @@
+/* FINISH PAGE SECTION */
+.finish_page {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    font-family: Lato, sans-serif;
+    background-color: white;
+}
+
+/* BANNER SECTION */
+.finish_page_banner {
+    border: 1.5px solid black;
+    border-radius: 30px;
+    padding: 5%;
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .finish_page_banner {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .finish_page_banner {
+        width: 40%;
+        padding: 5%;
+    }
+}
+
+.finish_page_banner h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.finish_page_banner h4 {
+    margin-bottom: 8px;
+}
+
+.finish_page_banner p {
+    color:#636363;
+    margin-bottom: 20px;
+}
+
+/* SOCIAL ICONS SECTION */
+.social_icons_container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.social_icon {
+    font-size: 25px;
+}
+
+.social_icons_container button {
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+
+/* RETURN HOME BUTTON */
+.finish_page_banner .back_button {
+    height: 35px;
+    width: 125px;
+    font-size: 15px;
+    color: #5881CA;
+    border: 1px solid #5881CA;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.finish_page_banner .back_button:active {
+    background-color: #5881CA;
+    color: white;
+}
+
+.link {
+    width: fit-content;
+}
+
