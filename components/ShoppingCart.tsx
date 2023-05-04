@@ -7,8 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 //import Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { productsArray } from "../redux/slices/shoppingCartSlice";
+
+//Import Redux Slices Actions
+import { addProduct, removeOneProduct, removeProduct } from '../redux/slices/shoppingCartSlice';
 
 //import icons from react icons
 import { BsBag, BsTrash } from 'react-icons/bs';
@@ -24,11 +27,41 @@ type ShoppingCartPropsType = {
     closeCart: SetterFunctionType
 };
 
+//type for product
+type ProductAtCart = {
+    name: string,
+    price: number,
+    imageSrc: {
+      src: string,
+      height: number,
+      width: number,
+      blurDataURL: string,
+      blurWidth: number,
+      blurHeight: number
+    },
+    size: string,
+    color: string,
+    quantity: number
+  }
+
 
 
 const MobileShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
     const [total, setTotal] = useState<number>(0);
     const productsInCart = useSelector(productsArray);
+    const dispatch = useDispatch();
+
+    const handleAddProduct = (productToAdd: ProductAtCart): void => {
+        dispatch(addProduct(productToAdd));
+    }
+
+    const handleRemoveOneProduct = (productToRemove: ProductAtCart): void => {
+        dispatch(removeOneProduct(productToRemove));
+    }
+
+    const handleRemoveProduct = (productToRemove: ProductAtCart): void => {
+        dispatch(removeProduct(productToRemove));
+    }
 
     useEffect(() => {
         let counter: number = 0;
@@ -55,15 +88,15 @@ const MobileShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
                             </div>
                             <div className={styles.product_details_container}>
                                 <h4>{product.name}</h4>
-                                <BsTrash className={styles.trash_icon} />
+                                <BsTrash onClick={() => handleRemoveProduct(product)} className={styles.trash_icon} />
                                 <div className={styles.price_size_container}>
                                     <span className={styles.price}>AU$ {product.price}.00</span><span className={styles.size}>Size: {product.size}</span><span className={styles.color}>Color: {product.color}</span>
                                 </div>
                                 <div>
                                     <span>Qtd:</span>
-                                    <button className={styles.minus_button}>-</button>
+                                    <button onClick={() => handleRemoveOneProduct(product)} className={styles.minus_button}>-</button>
                                     <span>{product.quantity}</span>
-                                    <button className={styles.plus_button}>+</button>
+                                    <button onClick={() => handleAddProduct(product)}  className={styles.plus_button}>+</button>
                                 </div>
                             </div>
                         </div>

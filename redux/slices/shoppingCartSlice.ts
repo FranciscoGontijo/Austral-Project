@@ -41,13 +41,24 @@ export const cartSlice = createSlice({
         state.products.push({ ...action.payload, quantity: 1 });
       }
     },
+    removeOneProduct: (state, action) => {
+      const { name, size, color } = action.payload
+      const index = state.products.findIndex(obj => obj.name === name && obj.color === color && obj.size === size);
+      if (state.products[index].quantity > 1) {
+        state.products[index].quantity--
+      } else {
+        state.products.splice(index, 1);
+      }
+    },
     removeProduct: (state, action) => {
-      state.products = state.products.filter((product) => product.name !== action.payload.name && product.size !== action.payload.size && product.color !== action.payload.color);
+      const { name, size, color } = action.payload
+      const index = state.products.findIndex(obj => obj.name === name && obj.color === color && obj.size === size);
+      state.products.splice(index, 1);
     }
   },
 })
 
-export const { addProduct, removeProduct } = cartSlice.actions
+export const { addProduct, removeOneProduct, removeProduct } = cartSlice.actions
 
 export const productsArray = (state: RootState) => state.cart.products
 
