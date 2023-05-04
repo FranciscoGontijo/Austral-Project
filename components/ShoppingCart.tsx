@@ -32,17 +32,17 @@ type ProductAtCart = {
     name: string,
     price: number,
     imageSrc: {
-      src: string,
-      height: number,
-      width: number,
-      blurDataURL: string,
-      blurWidth: number,
-      blurHeight: number
+        src: string,
+        height: number,
+        width: number,
+        blurDataURL: string,
+        blurWidth: number,
+        blurHeight: number
     },
     size: string,
     color: string,
     quantity: number
-  }
+}
 
 
 
@@ -79,38 +79,47 @@ const MobileShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
                 </div>
                 <FiX className={styles.exit_icon} onClick={() => closeCart()} />
             </div>
-            <div className={styles.all_products_container}>
-                {productsInCart.map((product) => {
-                    return (
-                        <div className={styles.product_container}>
-                            <div>
-                                <Image className={styles.product_image} src={product.imageSrc} alt={product.name} />
-                            </div>
-                            <div className={styles.product_details_container}>
-                                <h4>{product.name}</h4>
-                                <BsTrash onClick={() => handleRemoveProduct(product)} className={styles.trash_icon} />
-                                <div className={styles.price_size_container}>
-                                    <span className={styles.price}>AU$ {product.price}.00</span><span className={styles.size}>Size: {product.size}</span><span className={styles.color}>Color: {product.color}</span>
+            {productsInCart.length === 0 &&
+                <div className={styles.empty_cart_container}>
+                    <h3 style={{ fontFamily: 'Lato, sans-serif' }}>Your shopping cart is empty</h3>
+                    <Link href="/store"><button onClick={closeCart} className={styles.keep_shopping_button_empty}>Keep shopping</button></Link>
+                </div>
+            }
+            {productsInCart.length > 0 &&
+                <div>
+                    <div className={styles.all_products_container}>
+                        {productsInCart.map((product) => {
+                            return (
+                                <div className={styles.product_container}>
+                                    <div>
+                                        <Image className={styles.product_image} src={product.imageSrc} alt={product.name} />
+                                    </div>
+                                    <div className={styles.product_details_container}>
+                                        <h4>{product.name}</h4>
+                                        <BsTrash onClick={() => handleRemoveProduct(product)} className={styles.trash_icon} />
+                                        <div className={styles.price_size_container}>
+                                            <span className={styles.price}>AU$ {product.price}.00</span><span className={styles.size}>Size: {product.size}</span><span className={styles.color}>Color: {product.color}</span>
+                                        </div>
+                                        <div>
+                                            <span>Qtd:</span>
+                                            <button onClick={() => handleRemoveOneProduct(product)} className={styles.minus_button}>-</button>
+                                            <span>{product.quantity}</span>
+                                            <button onClick={() => handleAddProduct(product)} className={styles.plus_button}>+</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span>Qtd:</span>
-                                    <button onClick={() => handleRemoveOneProduct(product)} className={styles.minus_button}>-</button>
-                                    <span>{product.quantity}</span>
-                                    <button onClick={() => handleAddProduct(product)}  className={styles.plus_button}>+</button>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-            <div className={styles.div_bar}></div>
-            <div className={styles.subtotal_container}>
-                <span>Subtotal :</span><span>AU$ {total}.00</span>
-            </div>
-            <div className={styles.finalize_shopp_buttons_container}>
-                <Link href="/store"><button onClick={closeCart} className={styles.keep_shopping_button}>Keep shopping</button></Link>
-                <Link href="/finish"><button onClick={closeCart} className={styles.finalize_shopp_button}>Checkout</button></Link>
-            </div>
+                            )
+                        })}
+                    </div>
+                    <div className={styles.div_bar}></div>
+                    <div className={styles.subtotal_container}>
+                        <span>Subtotal :</span><span>AU$ {total}.00</span>
+                    </div>
+                    <div className={styles.finalize_shopp_buttons_container}>
+                        <Link href="/store"><button onClick={closeCart} className={styles.keep_shopping_button}>Keep shopping</button></Link>
+                        <Link href="/finish"><button onClick={closeCart} className={styles.finalize_shopp_button}>Checkout</button></Link>
+                    </div>
+                </div>}
         </section>
     )
 };
