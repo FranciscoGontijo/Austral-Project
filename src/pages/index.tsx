@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
-import Head from 'next/head';
+
 import styles from '@/styles/homepage/Home.module.css';
 
 //import images;
@@ -34,9 +34,6 @@ const Home: NextPage = () => {
 
   return (
     <main>
-      <Head>
-        <title>Austral Store</title>
-      </Head>
       <div className={styles.homepage}>
         <MainBanner />
         {display === 'mobile' && <HighlightsMobileHomepage />}
