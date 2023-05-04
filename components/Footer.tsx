@@ -8,7 +8,7 @@ import styles from '../src/styles/Footer.module.css';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { ImLocation } from 'react-icons/im';
 import { FiMail } from 'react-icons/fi';
-import { TiSocialInstagram, TiSocialLinkedin, TiSocialTwitter, TiSocialFacebook } from 'react-icons/ti';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 
 const Footer = () => {
@@ -17,20 +17,20 @@ const Footer = () => {
             <div className={styles.info_container}>
                 <h2>austral</h2>
                 <div className={styles.adress_container}>
-                    <ImLocation /><span>Anzac parade</span>
+                    <ImLocation /><span> Maroubra</span>
                     <p>Sydney, 2035</p>
                     <p>NSW, Australia</p>
                 </div>
                 <div className={styles.contact_container}>
                     <BsTelephoneFill /><span>(123) 456 789</span>
                     <br />
-                    <FiMail /><span>contact@domain.com</span>
+                    <FiMail /><span>franciscoacmg@gmail.com</span>
                 </div>
             </div>
             <div className={styles.info_container}>
                 <h2>Company</h2>
                 <Link href='/about'><p>About Us</p></Link>
-                <Link href='/about'></Link><p>Contact Us</p>
+                <Link href='/contact'></Link><p>Contact Us</p>
             </div>
             <div className={styles.info_container}>
                 <h2>Quick Links</h2>
@@ -41,10 +41,8 @@ const Footer = () => {
             <div className={styles.info_container}>
                 <h2>Let's stay in touch</h2>
                 <div className={styles.social_container}>
-                    <TiSocialFacebook />
-                    <TiSocialInstagram />
-                    <TiSocialLinkedin />
-                    <TiSocialTwitter />
+                    <a href="https://github.com/FranciscoGontijo" target="_blank"><FaGithub /></a>
+                    <a href="https://www.linkedin.com/in/francisco-gontijo-5a469b239/" target="_blank"><FaLinkedinIn /></a>
                 </div>
             </div>
         </section>
