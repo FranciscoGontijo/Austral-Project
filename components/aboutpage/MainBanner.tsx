@@ -6,7 +6,7 @@ import Image from "next/image";
 import styles from '../../src/styles/aboutpage/AboutPage.module.css';
 
 //import banner image
-import bannerImageSrc from '../../src/assets/images/Aboutpage Main Banner.webp.png';
+import bannerImageSrc from '../../src/assets/images/aboutpage/Aboutpage Main Banner.jpg';   
 
 const AboutUsBanner = () => {
     return (
