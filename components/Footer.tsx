@@ -30,13 +30,13 @@ const Footer = () => {
             <div className={styles.info_container}>
                 <h2>Company</h2>
                 <Link href='/about'><p>About Us</p></Link>
-                <Link href='/contact'></Link><p>Contact Us</p>
+                <Link href='/contact'><p>Contact Us</p></Link>
             </div>
             <div className={styles.info_container}>
                 <h2>Quick Links</h2>
-                <Link href='/store'></Link><p>Store</p>
-                <Link href='/salespage'></Link><p>Sales</p>
-                <Link href='/newproductspage'></Link><p>New products</p>
+                <Link href='/store'><p>Store</p></Link>
+                <Link href='/salespage'><p>Sales</p></Link>
+                <Link href='/newproductspage'><p>New products</p></Link>
             </div>
             <div className={styles.info_container}>
                 <h2>Let's stay in touch</h2>
