@@ -24,8 +24,8 @@ const ContactPage = () => {
                 <h1>Message sent successfully</h1>
                 <p>This is just a simulation, if you want to get in touch with the developer use this <a href="https://www.linkedin.com/in/francisco-gontijo-5a469b239/" target="_blank">link</a> or send an email to franciscoacmg@gmail.com</p>
                 <div>
-                    <FaGithub className={styles.social_icons}/>
-                    <FaLinkedinIn className={styles.social_icons}/>
+                    <a href="https://github.com/FranciscoGontijo"><FaGithub className={styles.social_icons}/></a>
+                    <a href="https://www.linkedin.com/in/francisco-alexandre-cardoso-melo-gontijo-5a469b239/"><FaLinkedinIn className={styles.social_icons}/></a>
                 </div>
                 <button onClick={() => setDisplay('form')}>Back</button>
             </div>}

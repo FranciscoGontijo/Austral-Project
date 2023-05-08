@@ -101,7 +101,6 @@ const NavBar = () => {
                     </ul>
                     <ul className={styles.navbar_contact_container}>
                         <li><Link onClick={() => setDisplay('hidden')} className={styles.contact_link} href="/contact"><FiPhone className={styles.phone_icon} />CONTACT US</Link></li>
-                        <li><Link onClick={() => setDisplay('hidden')} href="/">FAQ</Link></li>
                     </ul>
                 </div>
             </div>}
