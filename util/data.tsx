@@ -29,19 +29,19 @@ export const bannerImagesArray: CategorieType[] = [
     },
     {
         imageSrc: mainBannerSecondImageSrc,
-        pageHref: '/store/jackets',
+        pageHref: '/store',
         collectionTitle: 'Winter 23',
-        bannerTitle: 'Jackets',
-        bannerText: 'Produced with technological and sustainable fabric, which guarantee durability and style.',
+        bannerTitle: 'Sweatshirts',
+        bannerText: "Austral's sweatshirts, adapting to different temperatures and occasions.",
         buttonText: 'Shop Now',
         textColor: 'white'
     },
     {
         imageSrc: mainBannerThirdImageSrc,
-        pageHref: '/store/tshirts',
+        pageHref: '/store',
         collectionTitle: 'Winter 23',
         bannerTitle: 'T-shirts',
-        bannerText: 'Os casacos da Austral, além de se adaptarem a diferentes temperaturas e ocasiões, também são produzidos com tecidos tecnológicos e sustentáveis, que garantem durabilidade e estilo ao mesmo tempo.',
+        bannerText: 'Produced with technological and sustainable fabric, which guarantee durability and style.',
         buttonText: 'Shop Now',
         textColor: 'black'
     },
@@ -52,7 +52,7 @@ export const bannerImagesArray: CategorieType[] = [
         bannerTitle: '',
         bannerText: '',
         buttonText: '',
-        textColor: 'white'
+        textColor: ''
     }
 ]
 

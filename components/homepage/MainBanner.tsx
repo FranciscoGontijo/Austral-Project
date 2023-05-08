@@ -34,15 +34,15 @@ const MainBanner = () => {
 
   return (
     <section className={styles.banner_container}>
-      <IoIosArrowBack onClick={backImage} className={styles.back_arrow} />
-      <IoIosArrowForward onClick={nextImage} className={styles.foward_arrow} />
+      <IoIosArrowBack style={{ color: bannerImagesArray[currentIndex].textColor }} onClick={backImage} className={styles.back_arrow} />
+      <IoIosArrowForward style={{ color: bannerImagesArray[currentIndex].textColor }} onClick={nextImage} className={styles.foward_arrow} />
       <Link href={bannerImagesArray[currentIndex].pageHref}>
-      <div style={{color: bannerImagesArray[currentIndex].textColor}} className={styles.banner_text}>
-        <h3>{bannerImagesArray[currentIndex].collectionTitle}</h3>
-        <h2>{bannerImagesArray[currentIndex].bannerTitle}</h2>
-        <p>{bannerImagesArray[currentIndex].bannerText}</p>
-        {bannerImagesArray[currentIndex].buttonText !== '' && <button className={styles.button_28}>{bannerImagesArray[currentIndex].buttonText}</button>}
-      </div>
+        <div style={{ color: bannerImagesArray[currentIndex].textColor }} className={styles.banner_text}>
+          <h3>{bannerImagesArray[currentIndex].collectionTitle}</h3>
+          <h2>{bannerImagesArray[currentIndex].bannerTitle}</h2>
+          <p>{bannerImagesArray[currentIndex].bannerText}</p>
+          {bannerImagesArray[currentIndex].buttonText !== '' && <button className={styles.button_28}>{bannerImagesArray[currentIndex].buttonText}</button>}
+        </div>
         <Image
           src={bannerImagesArray[currentIndex].imageSrc}
           alt="Example Image"
