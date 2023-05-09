@@ -30,7 +30,7 @@ const ProductsSection = () => {
     };
 
     //Filter button
-    const handleCategoriesFilter = (): void => {
+    useEffect(() => {
         if (categorie === 'All' || categorie === '') {
             setFilteredProductsList(prevProductsArray => prevProductsArray = data.products);
             return
@@ -38,17 +38,12 @@ const ProductsSection = () => {
         if (categorie !== 'All') {
             let filteredArray: ProductType[] = data.products.filter(product => product.categorie === categorie);
             setFilteredProductsList(prevProductsArray => prevProductsArray = filteredArray);
-        }
-    };
-
-    useEffect(() => {
-        handleCategoriesFilter();
-        setSortProducts(prevSort => prevSort = '');
+        }        setSortProducts(prevSort => prevSort = '');
     }, [categorie]);
 
 
-    //Sort button (not working properly)
-    const handleSortProducts = (): void => {
+    //Sort button
+    useEffect(() => {
         if (sortProducts === '') {
             return
         }
@@ -58,10 +53,6 @@ const ProductsSection = () => {
         if (sortProducts === 'Price max to min') {
             setFilteredProductsList(prevProductList => [...prevProductList].sort((productA, productB) => (productA.price < productB.price ? 1 : -1)));
         }
-    };
-
-    useEffect(() => {
-        handleSortProducts();
     }, [sortProducts]);
 
     

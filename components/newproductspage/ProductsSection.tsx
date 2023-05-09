@@ -32,7 +32,7 @@ const NewProductsSection = () => {
     };
 
     //Filter button
-    const handleCategoriesFilter = (): void => {
+    useEffect(() => {
         if (categorie === 'All' || categorie === '') {
             setFilteredProductsList(prevProductsArray => prevProductsArray = newProductsArray);
             return
@@ -41,16 +41,12 @@ const NewProductsSection = () => {
             let filteredArray: ProductType[] = newProductsArray.filter(product => product.categorie === categorie);
             setFilteredProductsList(prevProductsArray => prevProductsArray = filteredArray);
         }
-    };
-
-    useEffect(() => {
-        handleCategoriesFilter();
         setSortProducts(prevSort => prevSort = '');
     }, [categorie]);
 
 
-    //Sort button (not working properly)
-    const handleSortProducts = (): void => {
+    //Sort button:
+    useEffect(() => {
         if (sortProducts === '') {
             return
         }
@@ -60,13 +56,9 @@ const NewProductsSection = () => {
         if (sortProducts === 'Price max to min') {
             setFilteredProductsList(prevProductList => [...prevProductList].sort((productA, productB) => (productA.price < productB.price ? 1 : -1)));
         }
-    };
-
-    useEffect(() => {
-        handleSortProducts();
     }, [sortProducts]);
 
-    
+
     return (
         <section className={styles.products_section_container}>
             <div className={styles.buttons_container}>
@@ -93,7 +85,7 @@ const NewProductsSection = () => {
                 </select>
             </div>
             <div className={styles.big_screen_products_container}>
-               {<FilterComponent categorieSetter={categorieSetter} />}
+                {<FilterComponent categorieSetter={categorieSetter} />}
                 <div className={styles.all_products_container}>
                     {filteredProductsList.map((product) => {
                         return (
