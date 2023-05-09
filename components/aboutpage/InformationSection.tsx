@@ -3,9 +3,9 @@
 import Image from "next/image";
 
 //import images
-import firstImageSrc from "../../src/assets/images/aboutpage/Imagem-01-Cantos-arredondados.jpg";
-import secondImageSrc from "../../src/assets/images/aboutpage/Imagem-02-Cantos-arredondados.jpg";
-import thirdImageSrc from "../../src/assets/images/aboutpage/Imagem-03-Cantos-arredondados.jpg";
+import firstImageSrc from "../src/assets/images/aboutpage/Imagem-01-Cantos-arredondados.jpg";
+import secondImageSrc from "../src/assets/images/aboutpage/Imagem-02-Cantos-arredondados.jpg";
+import thirdImageSrc from "../src/assets/images/aboutpage/Imagem-03-Cantos-arredondados.jpg";
 
 //import CSS
 import styles from "../../src/styles/aboutpage/AboutPage.module.css";
