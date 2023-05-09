@@ -122,9 +122,10 @@ const Product = () => {
                         <h2 className={styles.product_price}>$ {product?.price}.00</h2>
                         <h3 className={styles.color_display_label}>Color :</h3>
                         <div className={styles.color_display_container}>
-                            {product?.color.map((color) => {
+                            {product?.color.map((color, index) => {
                                 return (
                                     <div
+                                        key={index}
                                         title={color}
                                         onClick={() => setProductToAdd(prevObj => prevObj = { ...productToAdd, color: color })}
                                         className={styles.color_display}
@@ -139,9 +140,10 @@ const Product = () => {
                         </div>
                         <h3 className={styles.color_display_label}>Sizes :</h3>
                         <div className={styles.size_display_container}>
-                            {product?.sizes.map((size) => {
+                            {product?.sizes.map((size, index) => {
                                 return (
                                     <div
+                                        key={index}
                                         onClick={() => setProductToAdd((prevObj) => prevObj = { ...productToAdd, size: size })}
                                         className={styles.size_display}
                                     >

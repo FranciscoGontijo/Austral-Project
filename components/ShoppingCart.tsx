@@ -88,9 +88,9 @@ const ShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
             {productsInCart.length > 0 &&
                 <div>
                     <div className={styles.all_products_container}>
-                        {productsInCart.map((product) => {
+                        {productsInCart.map((product, index) => {
                             return (
-                                <div className={styles.product_container}>
+                                <div key={index} className={styles.product_container}>
                                     <div>
                                         <Image className={styles.product_image} src={product.imageSrc} alt={product.name} />
                                     </div>

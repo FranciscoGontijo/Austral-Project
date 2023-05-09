@@ -14,7 +14,7 @@ const AboutUsTextBanner = () => {
     return (
         <section className={styles.text_banner_container}>
            <h2>About Austral</h2>
-           <p>Austral is the way to dress as it should be: it combines what is important to you with what is essential to the world. That's why we offer a lifestyle-oriented experience through products made with quality and respect. With this compass, people can navigate through life with more confidence, feeling good about themselves and the planet.</p>
+           <p>Austral is the way to dress as it should be: it combines what is important to you with what is essential to the world. That&apos;s why we offer a lifestyle-oriented experience through products made with quality and respect. With this compass, people can navigate through life with more confidence, feeling good about themselves and the planet.</p>
            <div className={styles.division_bar}></div>
            <div className={styles.text_banner_information_containers}>
                 <div className={styles.information_container}>

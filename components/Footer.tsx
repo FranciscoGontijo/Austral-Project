@@ -39,7 +39,7 @@ const Footer = () => {
                 <Link href='/newproductspage'><p>New products</p></Link>
             </div>
             <div className={styles.info_container}>
-                <h2>Let's stay in touch</h2>
+                <h2>Let&apos;s stay in touch</h2>
                 <div className={styles.social_container}>
                     <a href="https://github.com/FranciscoGontijo" target="_blank"><FaGithub /></a>
                     <a href="https://www.linkedin.com/in/francisco-gontijo-5a469b239/" target="_blank"><FaLinkedinIn /></a>

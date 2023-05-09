@@ -37,7 +37,7 @@ const InformationSectionAboutPage = () => {
             <div className={styles.each_information_container}>
                 <div className={styles.information_text_container}>
                     <h3>Product Excellence</h3>
-                    <p>We strive for the highest standard of quality in all the products we develop. For us, it's not just about working with high-quality raw materials. Our creations must also always excel in finishing, be carefully crafted down to the smallest details, and have precise fit. From the product to the packaging, we aim to stand out for the exceptional care we put into everything we produce.</p>
+                    <p>We strive for the highest standard of quality in all the products we develop. For us, it&apos;s not just about working with high-quality raw materials. Our creations must also always excel in finishing, be carefully crafted down to the smallest details, and have precise fit. From the product to the packaging, we aim to stand out for the exceptional care we put into everything we produce.</p>
                 </div>
                 <Image
                     className={styles.information_section_image}
