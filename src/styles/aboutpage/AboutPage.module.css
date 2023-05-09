@@ -116,6 +116,7 @@
 
 .information_section_image {
     width: 100%;
+    height: auto;
     max-width: 590px;
     align-self: center;
 }
