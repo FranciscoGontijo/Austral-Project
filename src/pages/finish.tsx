@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 
 //import next components 
 import Link from "next/link"
@@ -8,7 +9,7 @@ import styles from "../styles/finishpage/FinishPage.module.css";
 //use github, linkedln links
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
-const FinishPage = () => {
+const FinishPage: NextPage = () => {
 
     return (
         <section className={styles.finish_page}>

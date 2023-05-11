@@ -1,3 +1,5 @@
+import type { NextPage } from 'next';
+
 //Import React
 import { useState, useEffect } from 'react';
 
@@ -39,7 +41,7 @@ type ProductAtCart = {
     color: string
 }
 
-const Product = () => {
+const Product: NextPage = () => {
     const router = useRouter();
     const dispatch = useDispatch();
 

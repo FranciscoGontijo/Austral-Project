@@ -1,3 +1,5 @@
+import type { NextPage } from 'next';
+
 import { useState } from "react";
 
 //import react icons
@@ -6,7 +8,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 //import CSS
 import styles from "../../src/styles/contactpage/ContactPage.module.css"
 
-const ContactPage = () => {
+const ContactPage: NextPage = () => {
     const [display, setDisplay] = useState('form');
 
     return (

@@ -1,9 +1,10 @@
+import type { NextPage } from 'next';
 
 //import components
 import SalesBanner from "../../components/salespage/MainBanner";
 import SalesProductsSection from "../../components/salespage/ProductsSection";
 
-const SalesProductsPage = () => {
+const SalesProductsPage: NextPage = () => {
     return (
         <section>
             <SalesBanner />
