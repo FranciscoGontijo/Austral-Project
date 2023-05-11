@@ -1,6 +1,6 @@
 
 //import react
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 //import next components
 import Image from "next/image";
@@ -63,14 +63,32 @@ const ShoppingCart = ({ counter, closeCart }: ShoppingCartPropsType) => {
         dispatch(removeProduct(productToRemove));
     }
 
+    //useEffec to update cart products counter
     useEffect(() => {
         let counter: number = 0;
         productsInCart.forEach((obj) => counter += obj.quantity * obj.price);
         setTotal(prevTotal => prevTotal = counter)
     }, [productsInCart])
 
+    //Close shopping cart when clicked outside of it:
+    const cartRef = useRef<HTMLDivElement | null>(null); // Add the type for the ref
+
+    useEffect(() => {
+        const handler = (e: MouseEvent) => {
+            if (cartRef.current && !cartRef.current.contains(e.target as Node)) { // Add null check and type assertion
+                closeCart();
+            }
+        }
+
+        document.addEventListener("mousedown", handler);
+
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        }
+    })
+
     return (
-        <section className={styles.shopping_cart_container}>
+        <section ref={cartRef} className={styles.shopping_cart_container}>
             <div className={styles.shopping_bag_header}>
                 <h2>My bag</h2>
                 <div className={styles.bag_counter_container}>

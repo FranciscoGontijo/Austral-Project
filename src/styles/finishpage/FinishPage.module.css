@@ -56,6 +56,7 @@
 
 .social_icon {
     font-size: 25px;
+    color: black;
 }
 
 .social_icons_container button {
@@ -63,6 +64,7 @@
     background-color: transparent;
     border: none;
     font-size: 18px;
+    color: black;
 }
 
 /* RETURN HOME BUTTON */
@@ -74,6 +76,7 @@
     border: 1px solid #5881CA;
     border-radius: 6px;
     cursor: pointer;
+    background-color: #fff;
 }
 
 .finish_page_banner .back_button:active {
