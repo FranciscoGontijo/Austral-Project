@@ -65,6 +65,7 @@
     border: none;
     font-size: 18px;
     color: black;
+    cursor: pointer;
 }
 
 /* RETURN HOME BUTTON */
