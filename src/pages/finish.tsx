@@ -20,7 +20,7 @@ const FinishPage: NextPage = () => {
                 <div className={styles.social_icons_container}>
                     <a href="https://github.com/FranciscoGontijo" target="_blank"><FaGithub className={styles.social_icon} /></a>
                     <a href="https://www.linkedin.com/in/francisco-gontijo-5a469b239/" target="_blank"><FaLinkedinIn className={styles.social_icon} /></a>
-                    <a href="#"></a><button>Portfolio</button>
+                    <a href="https://franciscogontijo.github.io/" target="_blank"><button>Portfolio</button></a>
                 </div>
                 <Link className={styles.link} href="/"><button className={styles.back_button}>Back</button></Link>
             </div>
